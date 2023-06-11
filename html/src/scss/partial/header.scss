@@ -1,0 +1,50 @@
+.header {
+	height: 130px;
+	overflow: hidden;
+	border-bottom: 1px solid rgba(116, 105, 234, 0.2);
+	position: relative;
+	z-index: 2;
+}
+.logo {
+	float: left;
+	margin: 40px 0 0;
+}
+.header-nav {
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 22px;
+	float: right;
+	padding: 54px 0;
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	li {
+		float: left;
+		margin-left: 38px;
+	}
+	a {
+		color: #F6F6F6;
+		position: relative;
+		text-decoration: none;
+	}
+	.current {
+		a {
+			color: #EB7FE7;
+			&:after {
+				content: "";
+				display: block;
+				height: 10px;
+				width: 17px;
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='8' viewBox='0 0 17 8' fill='none'%3E%3Cpath d='M15.3101 1H1.68945L8.4998 7L15.3101 1Z' stroke='%23EB7FE7'/%3E%3C/svg%3E");
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+				position: absolute;
+				top: -14px;
+				left: 50%;
+				margin-left: -9px;
+			}
+		}
+	}
+}

@@ -1,0 +1,35 @@
+.hero {
+	height: 100vh;
+	margin-top: -130px;
+	position: relative;
+	background-size: cover;
+	background-position: 50% 50%;
+	h5 {
+		margin-bottom: 20px;
+		color: #4E4884;
+	}
+	h1 {
+		margin-bottom: 40px;
+	}
+	.container {
+		padding-top: 130px;
+		height: 100%;
+		border-left: 1px solid rgba(116, 105, 234, 0.2);
+		border-right: 1px solid rgba(116, 105, 234, 0.2);
+		> .row {
+			height: 100%;
+			> * {
+				&:after {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					margin-left: -30px;
+					width: 1px;
+					border-left: 1px solid rgba(116, 105, 234, 0.2);
+				}
+			}
+		}
+	}
+}
