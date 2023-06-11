@@ -1,0 +1,72 @@
+.about-img {
+	padding-right: 30px;
+	img {
+		width: 100%;
+		display: block;
+	}
+}
+.about-content {
+	h5 {
+		color: #4E4884;
+		margin-bottom: 18px;
+	}
+	h1 {
+		margin-bottom: 40px;
+	}
+}
+
+.mission-list {
+	list-style: none;
+	padding: 0;
+	margin: 35px 0 0;
+	h6 {
+		color: #4E4884;
+		font-size: 18px;
+		font-weight: 600;
+		margin: 0 0 10px;
+	}
+	& > li {
+		margin-bottom: 40px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	& > li > *:last-child {
+		margin-bottom: 0;
+	}
+}
+.card-team-img {
+	margin-bottom: 26px;
+	img {
+		display: block;
+		margin: auto;
+		width: 100%;
+	}
+}
+.card-team {
+	h6 {
+		color: #bdbdbd;
+		font-size: 18px;
+		font-weight: 600;
+		margin-bottom: 10px;
+	}
+	p {
+		font-size: 16px;
+		margin: 0;
+	}
+}
+.team {
+	> .row:not(:last-child) {
+		position: relative;
+		padding-bottom: 74px;
+		&:after {
+			content: "";
+			display: block;
+			border-top: 1px solid rgba(116, 105, 234, 0.2);
+			position: absolute;
+			bottom: 40px;
+			left: -14px;
+			right: -15px;
+		}
+	}
+}

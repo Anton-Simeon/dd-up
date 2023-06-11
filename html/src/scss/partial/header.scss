@@ -28,6 +28,10 @@
 		color: #F6F6F6;
 		position: relative;
 		text-decoration: none;
+		transition: 0.1s;
+		&:hover {
+			color: #EB7FE7;
+		}
 	}
 	.current {
 		a {
