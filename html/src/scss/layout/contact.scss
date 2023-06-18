@@ -1,0 +1,21 @@
+.email {
+	color: #BDBDBD;
+	text-decoration: none;
+	font-size: 29px;
+	font-weight: bold;
+}
+.form-floating {
+	margin-bottom: 24px;
+}
+.contact-form {
+	font-size: 1rem;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+.form-btn {
+	margin-top: 40px;
+}

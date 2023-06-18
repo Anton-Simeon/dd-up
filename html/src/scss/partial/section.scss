@@ -90,7 +90,7 @@
 .our-works-list {
 	list-style: none;
 	padding: 0;
-	margin: -23px -30px 72px -30px;
+	margin: -28px -30px 40px -30px;
 	li {
 		border-bottom: 1px solid rgba(116, 105, 234, 0.2);
 	}
@@ -98,10 +98,27 @@
 		color: #BDBDBD;
 		display: block;
 		text-decoration: none;
-		font-size: 46px;
-		line-height: 64px;
+		font-size: 29px;
+		line-height: 34px;
 		font-weight: 600;
-		padding: 27px 30px;
+		padding: 32px 30px;
+		position: relative;
+		&:hover {
+			color: #4E4884;
+			&:after {
+				content: "";
+				display: block;
+				height: 17px;
+				width: 12px;
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='17' viewBox='0 0 12 17' fill='none'%3E%3Cpath d='M1 1.10349L1 15.7587L11 8.43108L1 1.10349Z' stroke='%23645DAD'/%3E%3C/svg%3E");
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+				position: absolute;
+				right: 30px;
+				top: 50%;
+				margin-top: -5px;
+			}
+		}
 	}
 }
 .why-we-img {

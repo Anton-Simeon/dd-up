@@ -100,3 +100,19 @@ b {
 		}
 	}
 }
+
+.btn {
+	cursor: pointer;
+}
+.btn-secondary {
+  &:hover {
+    border-color: #645DAD;
+    background-color: #645DAD;
+    color: #ffffff;
+  }
+  &:active {
+    border-color: #504a8a !important;
+    background-color: #504a8a !important;
+    color: #ffffff !important;
+  }
+}
