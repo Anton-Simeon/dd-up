@@ -4,6 +4,37 @@
 	border-bottom: 1px solid rgba(116, 105, 234, 0.2);
 	position: relative;
 	z-index: 2;
+	> .container {
+		height: 100%;
+		position: relative;
+	}
+}
+
+@media(min-width: 1281px) {
+	.header:not(.header-with-hero) {
+		> .container {
+			&:before {
+				content: " ";
+				display: block;
+				border-left: 1px solid rgba(116, 105, 234, 0.2);
+				left: -1px;
+				top: 0;
+				bottom: 0;
+				position: absolute;
+				z-index: 3;
+			}
+			&:after {
+				content: " ";
+				display: block;
+				border-left: 1px solid rgba(116, 105, 234, 0.2);
+				right: -1px;
+				top: 0;
+				bottom: 0;
+				position: absolute;
+				z-index: 3;
+			}
+		}
+	}
 }
 .logo {
 	float: left;

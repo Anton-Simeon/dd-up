@@ -6197,7 +6197,33 @@ b {
   position: relative;
   z-index: 2;
 }
+.header > .container {
+  height: 100%;
+  position: relative;
+}
 
+@media (min-width: 1281px) {
+  .header:not(.header-with-hero) > .container:before {
+    content: " ";
+    display: block;
+    border-left: 1px solid rgba(116, 105, 234, 0.2);
+    left: -1px;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 3;
+  }
+  .header:not(.header-with-hero) > .container:after {
+    content: " ";
+    display: block;
+    border-left: 1px solid rgba(116, 105, 234, 0.2);
+    right: -1px;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 3;
+  }
+}
 .logo {
   float: left;
   margin: 40px 0 0;
@@ -6289,25 +6315,27 @@ b {
   height: 100%;
   position: relative;
 }
-.section > .container:before {
-  content: " ";
-  display: block;
-  border-left: 1px solid rgba(116, 105, 234, 0.2);
-  left: -1px;
-  top: 0;
-  bottom: 0;
-  position: absolute;
-  z-index: 3;
-}
-.section > .container:after {
-  content: " ";
-  display: block;
-  border-left: 1px solid rgba(116, 105, 234, 0.2);
-  right: -1px;
-  top: 0;
-  bottom: 0;
-  position: absolute;
-  z-index: 3;
+@media (min-width: 1281px) {
+  .section > .container:before {
+    content: " ";
+    display: block;
+    border-left: 1px solid rgba(116, 105, 234, 0.2);
+    left: -1px;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 3;
+  }
+  .section > .container:after {
+    content: " ";
+    display: block;
+    border-left: 1px solid rgba(116, 105, 234, 0.2);
+    right: -1px;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 3;
+  }
 }
 .section > .container > .row {
   height: 100%;
@@ -6458,6 +6486,12 @@ b {
   z-index: 3;
 }
 
+@media (max-width: 991px) {
+  .section-what-about-you > .container {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
 .footer {
   position: relative;
   background: #0B0B0B;
@@ -6470,25 +6504,27 @@ b {
   height: 100%;
   position: relative;
 }
-.footer > .container:before {
-  content: " ";
-  display: block;
-  border-left: 1px solid rgba(116, 105, 234, 0.2);
-  left: -1px;
-  top: 0;
-  bottom: 0;
-  position: absolute;
-  z-index: 3;
-}
-.footer > .container:after {
-  content: " ";
-  display: block;
-  border-left: 1px solid rgba(116, 105, 234, 0.2);
-  right: -1px;
-  top: 0;
-  bottom: 0;
-  position: absolute;
-  z-index: 3;
+@media (min-width: 1281px) {
+  .footer > .container:before {
+    content: " ";
+    display: block;
+    border-left: 1px solid rgba(116, 105, 234, 0.2);
+    left: -1px;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 3;
+  }
+  .footer > .container:after {
+    content: " ";
+    display: block;
+    border-left: 1px solid rgba(116, 105, 234, 0.2);
+    right: -1px;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 3;
+  }
 }
 .footer > .container > .row {
   height: 100%;
@@ -6565,6 +6601,15 @@ b {
   text-decoration: underline;
 }
 
+@media (max-width: 991px) {
+  .footer-text {
+    margin-bottom: 30px;
+  }
+  .footer > .container {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
 .content-why-we {
   padding-right: 30px;
   height: 100%;
@@ -6650,20 +6695,15 @@ b {
 
 .projects-img {
   padding-right: 30px;
-  min-height: 460px;
-  height: 100%;
 }
 .projects-img > a {
   display: block;
   text-decoration: none;
   position: relative;
-  height: 100%;
 }
 .projects-img img {
-  height: 100%;
+  height: auto;
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
   display: block;
 }
 .projects-img > a:after {
