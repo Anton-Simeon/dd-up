@@ -1,5 +1,4 @@
 .hero {
-	height: 100vh;
 	margin-top: -130px;
 	position: relative;
 	background-size: cover;
@@ -12,12 +11,34 @@
 		margin-bottom: 40px;
 	}
 	.container {
-		padding-top: 130px;
-		height: 100%;
-		border-left: 1px solid rgba(116, 105, 234, 0.2);
-		border-right: 1px solid rgba(116, 105, 234, 0.2);
+		min-height: 100vh;
+		padding-top: 200px;
+		display: flex;
+		padding-bottom: 70px;
+		position: relative;
+		&:before {
+			content: " ";
+			display: block;
+			border-left: 1px solid rgba(116, 105, 234, 0.2);
+			left: 14px;
+			top: 0;
+			bottom: 0;
+			position: absolute;
+			z-index: 3;
+		}
+		&:after {
+			content: " ";
+			display: block;
+			border-left: 1px solid rgba(116, 105, 234, 0.2);
+			right: 14px;
+			top: 0;
+			bottom: 0;
+			position: absolute;
+			z-index: 3;
+		}
+
 		> .row {
-			height: 100%;
+			flex-grow: 1;
 			> * {
 				&:after {
 					content: "";

@@ -44,8 +44,10 @@
 	}
 }
 .services-content {
-	padding-right: 30px;
-	height: 100%;
+	@media(min-width: 768px) {
+		padding-right: 30px;
+		height: 100%;
+	}
 	h2 {
 		margin-top: -2px;
 		padding-bottom: 29px;
@@ -56,9 +58,17 @@
 		padding-left: 30px;
 		padding-right: 30px;
 	}
+
+	@media(min-width: 576px) and (max-width: 767px) {
+		h2 {
+			margin-right: -15px;
+		}
+	}
 }
 
-
-.services-content-right {
-	padding-right: 0;
+@media(min-width: 768px) {
+	.services-content-right {
+		padding-right: 0;
+		padding-left: 1px;
+	}
 }

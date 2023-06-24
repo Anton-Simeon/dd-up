@@ -10,32 +10,31 @@
 	}
 }
 
-@media(min-width: 1281px) {
-	.header:not(.header-with-hero) {
-		> .container {
-			&:before {
-				content: " ";
-				display: block;
-				border-left: 1px solid rgba(116, 105, 234, 0.2);
-				left: -1px;
-				top: 0;
-				bottom: 0;
-				position: absolute;
-				z-index: 3;
-			}
-			&:after {
-				content: " ";
-				display: block;
-				border-left: 1px solid rgba(116, 105, 234, 0.2);
-				right: -1px;
-				top: 0;
-				bottom: 0;
-				position: absolute;
-				z-index: 3;
-			}
+.header:not(.header-with-hero) {
+	> .container {
+		&:before {
+			content: " ";
+			display: block;
+			border-left: 1px solid rgba(116, 105, 234, 0.2);
+			left: 14px;
+			top: 0;
+			bottom: 0;
+			position: absolute;
+			z-index: 3;
+		}
+		&:after {
+			content: " ";
+			display: block;
+			border-left: 1px solid rgba(116, 105, 234, 0.2);
+			right: 14px;
+			top: 0;
+			bottom: 0;
+			position: absolute;
+			z-index: 3;
 		}
 	}
 }
+
 .logo {
 	float: left;
 	margin: 40px 0 0;
@@ -83,3 +82,16 @@
 		}
 	}
 }
+
+// @media(max-width: 1280px) {
+// 	.header:not(.header-with-hero) {
+// 		> .container {
+// 			&:before {
+// 				left: 15px;
+// 			}
+// 			&:after {
+// 				right: 15px;
+// 			}
+// 		}
+// 	}
+// }

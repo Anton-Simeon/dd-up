@@ -56,17 +56,42 @@
 	}
 }
 .team {
-	> .row:not(:last-child) {
-		position: relative;
-		padding-bottom: 74px;
-		&:after {
-			content: "";
-			display: block;
-			border-top: 1px solid rgba(116, 105, 234, 0.2);
-			position: absolute;
-			bottom: 40px;
-			left: -14px;
-			right: -15px;
+	position: relative;
+	@media(min-width: 576px) {
+		margin-bottom: -74px;
+		> .row > * {
+			padding-bottom: 74px;
+			&:nth-child(4n) {
+				&:before {
+					content: "";
+					display: block;
+					border-top: 1px solid rgba(116, 105, 234, 0.2);
+					position: absolute;
+					left: -29px;
+					right: -30px;
+					margin-top: -30px;
+				}
+			}
 		}
+	}
+	@media(max-width: 575px) {
+		margin-bottom: -30px;
+		> .row > * {
+			padding-bottom: 30px;
+		}
+	}
+}
+
+@media(max-width: 767px) {
+	.about-img {
+		padding-right: 0;
+	}
+	.about-content h1, .about-content .h1 {
+		margin-bottom: 20px;
+	}
+}
+@media(max-width: 575px) {
+	.about-img {
+		margin: 40px 0 0;
 	}
 }

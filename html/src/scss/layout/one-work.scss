@@ -1,5 +1,6 @@
 .one-work-hero {
 	height: 460px;
+	background-position: 50% 50%;
 	> * {
 		height: 100%;
 	}
@@ -9,9 +10,6 @@
 	img {
 		width: 100%;
 	}
-}
-.services-content-right {
-	padding-right: 0;
 }
 
 .project-screens {
@@ -35,5 +33,37 @@
 	}
 	.screen {
 		margin-bottom: 20px;
+	}
+}
+@media(max-width: 767px) {
+	.project-img {
+		padding-right: 0px;
+	}
+	.project-screens {
+		padding: 40px 40px 20px;
+	}
+	.screen-mobile {
+		margin-bottom: 0;
+	}
+	.screen {
+		margin-bottom: 20px;
+	}
+}
+@media(max-width: 575px) {
+	.project-img {
+		margin-top: 40px;
+	}
+	.project-screens {
+	    padding: 0px;
+	    background: transparent;
+	}
+}
+@media(max-width: 360px) {
+	.one-work-hero {
+		background-size: 900px auto;
+		height: 350px;
+		h1 {
+			padding: 0 20px;		
+		}
 	}
 }

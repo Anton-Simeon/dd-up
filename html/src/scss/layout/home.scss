@@ -12,3 +12,25 @@
 		padding-right: 30px;
 	}
 }
+.what-we-do-content {
+	padding-left: 45px;
+}
+@media(max-width: 767px) {
+	.what-we-do-content {
+		&:after {
+			display: none !important;
+		}
+	}
+	.what-we-do-content {
+    	padding-left: 15px;
+    	padding-right: 15px;
+	}
+	.content-why-we {
+		padding-right: 0px;
+	}
+}
+@media(max-width: 575px) {
+	.what-we-do-content {
+		padding-right: 15px;
+	}
+}

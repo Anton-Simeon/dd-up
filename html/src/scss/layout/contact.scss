@@ -19,3 +19,15 @@ input:-webkit-autofill:focus {
 .form-btn {
 	margin-top: 40px;
 }
+
+@media(max-width: 1080px) {
+	.email {
+		font-size: 21px;
+	}
+}
+
+@media(max-width: 575px) {
+	.contact-form {
+		margin-top: 40px;
+	}
+}

@@ -4,8 +4,8 @@
 // F6F6F6
 
 .container {
-	max-width: 1260px;
-	padding: 0 30px;
+	max-width: 1290px;
+	padding: 0 45px;
 	margin: auto;
 }
 h1 {
@@ -19,6 +19,10 @@ h6 {
 .sub-title {
 	color: #4E4884;
 	padding-right: 30px;
+	margin-bottom: 15px;
+}
+.sub-title-margin {
+	margin-bottom: 25px;
 }
 
 .text-lg {
@@ -116,3 +120,62 @@ b {
     color: #ffffff !important;
   }
 }
+
+@media(max-width: 1180px) {
+	h1, .h1 {
+		font-size: 62px;
+	}
+}
+@media(max-width: 1080px) {
+	h1, .h1 {
+		font-size: 52px;
+		line-height: 1.2;
+	}
+	h2, .h2 {
+		font-size: 32px;
+	}
+	h5, h5 {
+		font-size: 21px;
+	}
+	body {
+		font-size: 16px;
+	}
+	.more a {
+		font-size: 16px;
+	}
+	.more i {
+		height: 34px;
+		width: 34px;
+	}
+	.more i:after {
+		background-size: 7px auto;
+	}
+}
+
+@media(max-width: 767px) {
+	.container {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.text-lg {
+		font-size: 25px;
+	}
+}
+@media(max-width: 767px) and (min-width: 576px) {
+	.padding-left-sm-0 {
+		padding-left: 0;
+		&:after {
+			margin-left: -15px !important;
+		}
+	}
+}
+
+@media(max-width: 575px) {
+	.img {
+	    margin: 40px 0 0;
+	}
+	h1 {
+		font-size: 44px;
+	}
+}
+
