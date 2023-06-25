@@ -60,6 +60,7 @@
 	font-weight: 300;
 	line-height: 1.4;
 	margin-top: -3px;
+	max-width: 242px;
 }
 .footer-nav {
 	ul {
@@ -130,6 +131,7 @@
 @media(max-width: 991px) {
 	.footer-text {
 		margin-bottom: 30px;
+		max-width: 100%;
 	}
 	.footer > .container {
 		padding-top: 80px;
