@@ -40,6 +40,22 @@ dd-up-gatsby/dd-up/backend/.cache/
 dd-up-gatsby/dd-up/backend/build/
 dd-up-gatsby/dd-up/frontend/node_modules/
 dd-up-gatsby/dd-up/frontend/.cache/
+
+
+
+*node_modules/*
+**/node_modules
+/node_modules
+/**/node_modules
+**node_modules
+node_modules
+node_modules/
+
+
+
+
+
+
 jspm_packages/
 
 # Typescript v1 declaration files
