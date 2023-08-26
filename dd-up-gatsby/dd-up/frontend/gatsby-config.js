@@ -37,6 +37,22 @@ const strapiConfig = {
         },
       },
     },
+    {
+      singularName: "work",
+      queryParams: {
+        populate: {
+          TileImage: {
+            url: "*",
+            alternativeText: "*"
+          }
+        },
+      },
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      },
+    },
   ],
   singleTypes: [],
   remoteFileHeaders: {
@@ -45,7 +61,7 @@ const strapiConfig = {
      * For http request with a image or other files need authorization
      * For expamle: Fetch a CDN file which has a security config when gatsby building needs
      */
-    Referer: "https://dd-up.at",
+    Referer: "http://127.0.0.1:8000",
     // Authorization: "Bearer eyJhabcdefg_replace_it_with_your_own_token",
   },
 };
@@ -62,7 +78,8 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: strapiConfig,
-    },
+    }
   ],
-  trailingSlash: "never"
+  trailingSlash: "never",
 };
+

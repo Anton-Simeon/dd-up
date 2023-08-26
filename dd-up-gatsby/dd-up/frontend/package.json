@@ -16,15 +16,19 @@
   },
   "dependencies": {
     "gatsby": "^5.11.0",
-    "gatsby-plugin-image": "^3.11.0",
+    "gatsby-plugin-image": "^3.12.0",
     "gatsby-plugin-sass": "^6.11.0",
-    "gatsby-plugin-sharp": "^5.11.0",
-    "gatsby-source-filesystem": "^5.11.0",
-    "gatsby-source-strapi": "^3.3.0",
-    "gatsby-transformer-remark": "^6.11.0",
-    "gatsby-transformer-sharp": "^5.11.0",
+    "gatsby-plugin-sharp": "^5.12.0",
+    "gatsby-source-filesystem": "^5.12.0",
+    "gatsby-source-strapi": "^3.3.1",
+    "gatsby-transformer-remark": "^6.12.0",
+    "gatsby-transformer-sharp": "^5.12.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-intl": "^6.4.4",
     "sass": "^1.66.1"
+  },
+  "devDependencies": {
+    "http-proxy-middleware": "^2.0.6"
   }
 }
