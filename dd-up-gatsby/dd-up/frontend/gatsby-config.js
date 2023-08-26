@@ -31,6 +31,11 @@ const strapiConfig = {
           },
         },
       },
+      queryParams: {
+        // Ваши настройки для сущности "work" здесь
+        // Например, для настройки локализации:
+        locale: "de-AT"
+      },
       pluginOptions: {
         i18n: {
           locale: "all", // Fetch all localizations

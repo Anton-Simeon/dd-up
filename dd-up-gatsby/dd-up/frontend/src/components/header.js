@@ -16,10 +16,7 @@ const Header = () => {
 					<div></div>
 					<div></div>
 				</div>
-
 				<LanguageDropdown />
-
-
 				<div className="header-dropdown">
 					<a href="" className="header-dropdown-title">ENG<i></i></a>
 					<div className="header-dropdown-container">

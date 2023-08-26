@@ -2,7 +2,6 @@
 import * as React from 'react'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
-import { StaticImage } from 'gatsby-plugin-image'
 import { graphql } from "gatsby"
 
 // Step 2: Define your component
@@ -46,9 +45,12 @@ const WorksPage = ({data}) => {
 	)
 }
 
+// allStrapiWork(filter: { locale: { eq: "de-AT" } }) {
+// allStrapiWork(filter: { locale: { eq: "en" } }) {
+
 export const query = graphql`
 query MyQuery {
-	allStrapiWork {
+	allStrapiWork(filter: { locale: { eq: "de-AT" } }) {
 		edges {
 			node {
 				Title
