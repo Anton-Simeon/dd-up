@@ -1,15 +1,20 @@
 // Step 1: Import React
 import React from "react";
-
 import Layout from '../components/layout'
 import Seo from '../components/seo'
-
-
-
+import { graphql } from "gatsby"
+import { useIntl} from "gatsby-plugin-intl"
 
 
 // Step 2: Define your component
-const WorksPage = () => {
+const WorksPage = ({data}) => {
+	const intl = useIntl();
+	const currentLanguage = intl.locale;
+
+
+	const works = data.allStrapiWork.edges;
+	console.log(currentLanguage);
+	console.log(data);
 	
 
 
@@ -17,15 +22,65 @@ const WorksPage = () => {
 	return (
 		<Layout>
 
+{works.map(({ node }) => (
 
-sdsadsa
+<section key={node.id} className="section section-project section-no-border">
+	<div className="container">
+		<div className="row flex-row-reverse">
+			<div className="col-sm-6 col-md-5 col-lg-4 align-items-center d-flex">
+				<div className="projects-content">
+					<h2>{node.Title}</h2>
+					{node.TileDescription.data.TileDescription}
+					<div className="more">
+						<a href="work-one.html">Read more1<i></i></a>
+					</div>
+				</div>
+			</div>
+			<div className="col-sm-6 col-md-7 col-lg-8">
+				<div className="projects-img">
+					<img src={`http://127.0.0.1:1337${node.TileImage.url}`}  alt={`${node.TileImage.alternativeText}`} />
+				</div>
+				<div className="more d-block-sm">
+					<a href="work-one.html">Read more<i></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+))}
 
 
 		</Layout>
 	)
 }
 
+
+export const query = graphql`
+query MyQuery($language: String) {
+	allStrapiWork(filter: { locale: { eq: $language } }) {
+		edges {
+			node {
+				Title
+				id
+				TileImage {
+					url
+					alternativeText
+				}
+				TileDescription {
+					data {
+						TileDescription
+					}
+				}
+			}
+		}
+	}
+	}
+`;
+
+
+
 export const Head = () => (<Seo title="Works" />)
+
 
 // Step 3: Export your component
 export default WorksPage
