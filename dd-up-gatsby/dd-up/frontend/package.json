@@ -8,10 +8,10 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
+    "develop": "del /s /q .\\src\\images\\uploads\\* && xcopy /s /e /y ..\\backend\\public\\uploads .\\src\\images\\uploads && gatsby develop",
+    "start": "del /s /q .\\src\\images\\uploads\\* && xcopy /s /e /y ..\\backend\\public\\uploads .\\src\\images\\uploads && gatsby develop",
+    "build": "del /s /q .\\src\\images\\uploads\\* && xcopy /s /e /y ..\\backend\\public\\uploads .\\src\\images\\uploads && gatsby build",
+    "serve": "del /s /q .\\src\\images\\uploads\\* && xcopy /s /e /y ..\\backend\\public\\uploads .\\src\\images\\uploads && gatsby serve",
     "clean": "gatsby clean"
   },
   "dependencies": {

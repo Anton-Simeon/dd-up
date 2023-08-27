@@ -13,11 +13,8 @@ function LanguageSwitcher() {
       let newPath;
 
       if (currentPath.startsWith(`/${intl.locale}/`)) {
-
-        console.log('ddd');
         newPath = currentPath.replace(`/${intl.locale}/`, `/${language}/`);
       } else {
-        console.log('ddd2');
         newPath = `/${language}`;
       }
       
@@ -29,7 +26,7 @@ function LanguageSwitcher() {
   return (
     <div>
       <button onClick={() => changeLanguage('en')}>English</button>
-      <button onClick={() => changeLanguage('de')}>French</button>
+      <button onClick={() => changeLanguage('de')}>Deutsch</button>
       {/* Add buttons for other languages */}
     </div>
   );
