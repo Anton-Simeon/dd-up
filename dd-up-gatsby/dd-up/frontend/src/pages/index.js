@@ -3,7 +3,7 @@ import * as React from 'react'
 import Layout from '../components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import Seo from '../components/seo'
-import { useIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
+import { useIntl} from "gatsby-plugin-intl"
 
 
 // Step 2: Define your component

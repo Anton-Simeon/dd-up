@@ -24,11 +24,11 @@ const Header = () => {
 				</div>
 				<LanguageSwitcher />
 				<div className="header-dropdown">
-					<a href="" className="header-dropdown-title">ENG<i></i></a>
+					<Link to={`/${currentLanguage}`} className="header-dropdown-title">ENG<i></i></Link>
 					<div className="header-dropdown-container">
 						<ul>
-							<li className="active"><a href="">ENG</a></li>
-							<li><a href="">DE</a></li>
+							<li className="active"><Link to={`/${currentLanguage}`}>ENG</Link></li>
+							<li><Link to={`/${currentLanguage}`}>DE</Link></li>
 						</ul>
 					</div>
 				</div>
