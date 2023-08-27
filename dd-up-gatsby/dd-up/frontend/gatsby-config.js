@@ -32,13 +32,11 @@ const strapiConfig = {
         },
       },
       queryParams: {
-        // Ваши настройки для сущности "work" здесь
-        // Например, для настройки локализации:
-        locale: "de-AT"
+        locale: "en"
       },
       pluginOptions: {
         i18n: {
-          locale: "all", // Fetch all localizations
+          locale: "en", // Fetch all localizations
         },
       },
     },
@@ -81,10 +79,20 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     {
+      resolve: 'gatsby-plugin-intl',
+      options: {
+        path: `${__dirname}/src/intl`,
+        languages: ['en', 'de'],
+        defaultLanguage: 'en',
+        redirect: true,
+      }
+    },
+    {
       resolve: `gatsby-source-strapi`,
       options: strapiConfig,
-    }
+    },
   ],
   trailingSlash: "never",
 };
+
 

@@ -1,14 +1,20 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
-import LanguageDropdown from "../components/LanguageDropdown"
+import LanguageSwitcher from '../components/LanguageSwitcher'
+import { useIntl } from 'gatsby-plugin-intl';
+
 
 
 const Header = () => {
+	const intl = useIntl();
+	const currentLanguage = intl.locale;
+
+	console.log(currentLanguage);
 	return (
 		<header className="header">
 			<div className="container">
-				<Link to="/" className="logo">
+				<Link to={`/${currentLanguage}`} className="logo">
 					<StaticImage src="../images/logo.svg" alt="dd up" />
 				</Link>
 				<div className="header-nav-btn">
@@ -16,7 +22,7 @@ const Header = () => {
 					<div></div>
 					<div></div>
 				</div>
-				<LanguageDropdown />
+				<LanguageSwitcher />
 				<div className="header-dropdown">
 					<a href="" className="header-dropdown-title">ENG<i></i></a>
 					<div className="header-dropdown-container">
@@ -28,12 +34,13 @@ const Header = () => {
 				</div>
 				<nav className="header-nav">
 					<ul>
-						<li><Link to="/" activeClassName="current">HOME</Link></li>
-						<li><Link to="/about" activeClassName="current">ABOUT</Link></li>
-						<li><Link to="/works" activeClassName="current">WORKS</Link></li>
+						<li><Link to={`/${currentLanguage}`} activeClassName="current">HOME</Link></li>
+						<li><Link to={`/${currentLanguage}/about`} activeClassName="current">ABOUT</Link></li>
+						<li><Link to={`/${currentLanguage}/works`} activeClassName="current">WORKS</Link></li>
 					</ul>
 				</nav>
 			</div>
+			      <h1>{intl.formatMessage({ id: 'hello' })}</h1>
 		</header>
 	)
 }

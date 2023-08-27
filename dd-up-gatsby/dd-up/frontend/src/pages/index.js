@@ -3,19 +3,21 @@ import * as React from 'react'
 import Layout from '../components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import Seo from '../components/seo'
-import { graphql } from "gatsby"
+import { useIntl, Link, FormattedMessage } from "gatsby-plugin-intl"
 
 
 // Step 2: Define your component
-const IndexPage = ({data}) => {
+const IndexPage = () => {
+    const intl = useIntl()
 
-	const articleNodes = data.allStrapiArticle.nodes;
-	console.log(articleNodes);
 
 
 	return (
 		<Layout pageTitle="Home Page">
-			<p>I'm making this by following the Gatsby Tutorial.</p>
+			<p>I'm making this by following the Gatsby Tutorial. index </p>
+
+            {intl.formatMessage({ id: "hello" })}
+
 			<StaticImage
         		alt="Clifford, a reddish-brown pitbull, posing on a couch and looking stoically at the camera"
         		src="../images/icon.png"
@@ -25,21 +27,6 @@ const IndexPage = ({data}) => {
 }
 
 
-export const query = graphql`
-  query MyQuery {
-    allStrapiArticle {
-      nodes {
-        id
-        Title
-		Content {
-			data {
-				Content
-			}
-		}
-      }
-    }
-  }
-`;
 
 // You'll learn about this in the next task, just copy it for now
 export const Head = () => <Seo title="Home Page" />
