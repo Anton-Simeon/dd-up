@@ -45,6 +45,10 @@ const strapiConfig = {
       queryParams: {
         populate: {
           slug: "*",
+          Hero: {
+            url: "*"
+          },
+          Info: "*",
           TileImage: {
             url: "*",
             alternativeText: "*"

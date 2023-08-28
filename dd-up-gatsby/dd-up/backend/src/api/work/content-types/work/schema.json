@@ -136,7 +136,8 @@
       },
       "type": "customField",
       "options": {
-        "pattern": "title"
+        "pattern": "title",
+        "kw": "Title"
       },
       "customField": "plugin::slug.slug"
     }
