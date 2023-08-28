@@ -29,13 +29,9 @@ const WorksPage = ({ data }) => {
               </div>
               <div className="col-sm-6 col-md-7 col-lg-8">
                 <div className="projects-img">
-
-						{node.TileImage ? (
-      						  <img src={`/static${node.TileImage.url}`} alt={node.TileImage.alternativeText || 'dd up'} />
-						) : null}
-
-
-
+					{node.TileImage ? (
+							<img src={`/static${node.TileImage.url}`} alt={node.TileImage.alternativeText || 'dd up'} />
+					) : null}
                 </div>
                 <div className="more d-block-sm">
                   <a href="work-one.html">Read more<i></i></a>
@@ -56,6 +52,7 @@ export const query = graphql`
         node {
           Title
           id
+		  slug
           TileImage {
             url
             alternativeText

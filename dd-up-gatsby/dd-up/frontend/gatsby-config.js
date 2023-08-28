@@ -44,6 +44,7 @@ const strapiConfig = {
       singularName: "work",
       queryParams: {
         populate: {
+          slug: "*",
           TileImage: {
             url: "*",
             alternativeText: "*"
@@ -96,8 +97,8 @@ module.exports = {
 };
 
 
-
 exports.onCreatePage = ({ page, actions }) => {
+  
   const { createPage, deletePage } = actions
   const { language } = page.context.intl
   deletePage(page)
