@@ -35,7 +35,7 @@ const Footer = () => {
 					<div className="row">
 						<div className="col-sm-4 col-lg-3">
 							<Link to='/' className="footer-logo">
-								<StaticImage src="../images/logo.svg" alt="dd up" />
+								<StaticImage src="../images/logo.svg" imgStyle={{ transition: 'none', opacity: 1 }} alt="dd up" />
 							</Link>
 						</div>
 						<div className="col-sm-8 col-lg-9 d-lg-flex justify-content-between">

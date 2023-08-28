@@ -131,22 +131,31 @@
 		}
 		li {
 			border-bottom: 1px solid rgba(116, 105, 234, 0.2);
-			&:last-child {
-				border-bottom: none;
-			}
-		}
-		a {
 			padding: 5px 10px;
 			line-height: 22px;
 			font-size: 16px;
 			text-decoration: none;
 			display: block;
 			color: #4E4884;
+			cursor: pointer;
+			font-weight: 500;
 			&:hover {
 				background: #EB7FE7;
-				color: #f6f6f6;
+				color: #f6f6f6 !important;
 			}
-		} 
+			&:last-child {
+				border-bottom: none;
+			}
+			&.active {
+				color: #EB7FE7;
+			}
+		}
+		
+	}
+	&.open {
+		.header-dropdown-container {
+			display: block;
+		}
 	}
 }
 

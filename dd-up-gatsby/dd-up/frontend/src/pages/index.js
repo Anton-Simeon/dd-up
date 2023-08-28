@@ -21,6 +21,8 @@ const IndexPage = () => {
 			<StaticImage
         		alt="Clifford, a reddish-brown pitbull, posing on a couch and looking stoically at the camera"
         		src="../images/icon.png"
+				placeholder="none"
+				imgStyle={{ transition: 'none', opacity: 1 }}
       		/>
 		</Layout>
 	)

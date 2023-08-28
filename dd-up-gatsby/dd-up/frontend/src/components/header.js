@@ -15,7 +15,7 @@ const Header = () => {
 		<header className="header">
 			<div className="container">
 				<Link to={`/${currentLanguage}`} className="logo">
-					<StaticImage src="../images/logo.svg" alt="dd up" />
+					<StaticImage src="../images/logo.svg" imgStyle={{ transition: 'none', opacity: 1 }} alt="dd up" />
 				</Link>
 				<div className="header-nav-btn">
 					<div></div>
@@ -23,15 +23,6 @@ const Header = () => {
 					<div></div>
 				</div>
 				<LanguageSwitcher />
-				<div className="header-dropdown">
-					<Link to={`/${currentLanguage}`} className="header-dropdown-title">ENG<i></i></Link>
-					<div className="header-dropdown-container">
-						<ul>
-							<li className="active"><Link to={`/${currentLanguage}`}>ENG</Link></li>
-							<li><Link to={`/${currentLanguage}`}>DE</Link></li>
-						</ul>
-					</div>
-				</div>
 				<nav className="header-nav">
 					<ul>
 						<li><Link to={`/${currentLanguage}`} activeClassName="current">HOME</Link></li>

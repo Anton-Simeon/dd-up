@@ -1,35 +1,63 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useIntl } from 'gatsby-plugin-intl';
 import { navigate } from 'gatsby';
 
 function LanguageSwitcher() {
-  const intl = useIntl();
+	const intl = useIntl();
 
-  const changeLanguage = (language) => {
+	const [isOpen, setIsOpen] = useState(false);
+	const dropdownRef = useRef(null);
 
-    // Get the current URL and remove the language prefix (if present)
-    const currentPath = window.location.pathname;
+	// Обработчик клика по заголовку
+	const handleTitleClick = () => {
+		setIsOpen(!isOpen);
+	};
 
-      let newPath;
+	// Обработчик клика по пункту списка
+	const handleItemClick = (language) => {
+		setIsOpen(false);
+		const currentPath = window.location.pathname;
+		let newPath;
+		if (currentPath.startsWith(`/${intl.locale}/`)) {
+			newPath = currentPath.replace(`/${intl.locale}/`, `/${language}/`);
+		} else {
+			newPath = `/${language}`;
+		}
+		navigate(newPath);
+	};
 
-      if (currentPath.startsWith(`/${intl.locale}/`)) {
-        newPath = currentPath.replace(`/${intl.locale}/`, `/${language}/`);
-      } else {
-        newPath = `/${language}`;
-      }
-      
+	// Обработчик клика вне области выпадающего меню
+	const handleOutsideClick = (e) => {
+		if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+			setIsOpen(false);
+		}
+	};
 
-    // Use navigate to change the language and update the URL
-    navigate(newPath);
-  };
+	useEffect(() => {
+		// Добавляем обработчик клика для закрытия выпадающего меню при клике вне области
+		document.addEventListener('mousedown', handleOutsideClick);
 
-  return (
-    <div>
-      <button onClick={() => changeLanguage('en')}>English</button>
-      <button onClick={() => changeLanguage('de')}>Deutsch</button>
-      {/* Add buttons for other languages */}
-    </div>
-  );
+		return () => {
+			// Удаляем обработчик клика при размонтировании компонента
+			document.removeEventListener('mousedown', handleOutsideClick);
+		};
+	}, []);
+
+
+	return (
+	<div className={`header-dropdown ${isOpen ? 'open' : ''}`} ref={dropdownRef}>
+		<div className="header-dropdown-title" onClick={handleTitleClick}>{intl.formatMessage({ id: "langDropdown" })}<i></i>
+		</div>
+		<div className="header-dropdown-container">
+			<ul>
+				<li className={isOpen ? 'active' : ''} onClick={() => handleItemClick('en')}>
+					ENG
+				</li>
+				<li onClick={() => handleItemClick('de')}>DE</li>
+			</ul>
+		</div>
+	</div>
+	);
 }
 
 export default LanguageSwitcher;
