@@ -5,6 +5,8 @@ import { navigate } from 'gatsby';
 function LanguageSwitcher() {
 	const intl = useIntl();
 
+	
+
 	const [isOpen, setIsOpen] = useState(false);
 	const dropdownRef = useRef(null);
 
@@ -49,12 +51,19 @@ function LanguageSwitcher() {
 		<div className="header-dropdown-title" onClick={handleTitleClick}>{intl.formatMessage({ id: "langDropdown" })}<i></i>
 		</div>
 		<div className="header-dropdown-container">
-			<ul>
-				<li className={isOpen ? 'active' : ''} onClick={() => handleItemClick('en')}>
-					ENG
-				</li>
-				<li onClick={() => handleItemClick('de')}>DE</li>
-			</ul>
+		<ul>
+          {intl.locale === 'en' ? (
+            <>
+              <li className={'active'} onClick={() => handleItemClick('en')}>ENG</li>
+              <li onClick={() => handleItemClick('de')}>DE</li>
+            </>
+          ) : (
+            <>
+				<li className={'active'} onClick={() => handleItemClick('de')}>DE</li>
+              <li onClick={() => handleItemClick('en')}>ENG</li>
+            </>
+          )}
+        </ul>
 		</div>
 	</div>
 	);
