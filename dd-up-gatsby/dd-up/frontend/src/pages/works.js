@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import { graphql } from "gatsby"
@@ -23,7 +24,7 @@ const WorksPage = ({ data }) => {
                   <h2>{node.Title}</h2>
                   {node.TileDescription.data.TileDescription}
                   <div className="more">
-                    <a href="work-one.html">Read more1<i></i></a>
+                  <Link to={node.slug}>Read more<i></i></Link>
                   </div>
                 </div>
               </div>
@@ -34,7 +35,7 @@ const WorksPage = ({ data }) => {
 					) : null}
                 </div>
                 <div className="more d-block-sm">
-                  <a href="work-one.html">Read more<i></i></a>
+                <Link to={node.slug}>Read more<i></i></Link>
                 </div>
               </div>
             </div>
@@ -52,7 +53,7 @@ export const query = graphql`
         node {
           Title
           id
-		  slug
+		      slug
           TileImage {
             url
             alternativeText

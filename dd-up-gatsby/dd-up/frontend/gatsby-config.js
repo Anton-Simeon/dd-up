@@ -48,7 +48,8 @@ const strapiConfig = {
           TileImage: {
             url: "*",
             alternativeText: "*"
-          }
+          },
+          localizations: "*"
         },
       },
       pluginOptions: {

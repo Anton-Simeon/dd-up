@@ -4,24 +4,34 @@ exports.createPages = ({ graphql, actions }) => {
     return new Promise((resolve, reject) => {
       graphql(`
         {
-            allStrapiWork(filter: { locale: { eq: "en" } }) {
+            allStrapiWork(filter: { locale: { eq: "en" } }){
             edges {
                 node {
-                  id
+                  strapi_id
                   slug
+                  localizations {
+                    data {
+                      id
+                    }
+                  }
                 }
             }
           }
         }
       `).then(result => {
         result.data.allStrapiWork.edges.forEach(({ node }) => {
+
+
           createPage({
             path: `/works/${node.slug}`,
             component: path.resolve(`./src/templates/work.js`),
             context: {
-              slug: { id: node.id },
+              slug: node.slug
             },
           });
+
+
+
         });
         resolve();
       });
