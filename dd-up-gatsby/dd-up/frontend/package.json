@@ -8,10 +8,10 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "del /s /q .\\src\\images\\uploads\\* && xcopy /s /e /y ..\\backend\\public\\uploads .\\src\\images\\uploads && gatsby develop",
-    "start": "del /s /q .\\src\\images\\uploads\\* && xcopy /s /e /y ..\\backend\\public\\uploads .\\src\\images\\uploads && gatsby develop",
-    "build": "del /s /q .\\src\\images\\uploads\\* && xcopy /s /e /y ..\\backend\\public\\uploads .\\src\\images\\uploads && gatsby build",
-    "serve": "del /s /q .\\src\\images\\uploads\\* && xcopy /s /e /y ..\\backend\\public\\uploads .\\src\\images\\uploads && gatsby serve",
+    "develop": "(if not exist .\\public\\static\\uploads mkdir .\\public\\static\\uploads) && del /s /q .\\public\\static\\uploads\\* && xcopy /s /e /y ..\\backend\\public\\uploads .\\public\\static\\uploads && gatsby develop",
+    "start": "(if not exist .\\public\\static\\uploads mkdir .\\public\\static\\uploads) && del /s /q .\\public\\static\\uploads\\* && xcopy /s /e /y ..\\backend\\public\\uploads .\\public\\static\\uploads && gatsby develop",
+    "build": "(if not exist .\\public\\static\\uploads mkdir .\\public\\static\\uploads) && del /s /q .\\public\\static\\uploads\\* && xcopy /s /e /y ..\\backend\\public\\uploads .\\public\\static\\uploads && gatsby build",
+    "serve": "(if not exist .\\public\\static\\uploads mkdir .\\public\\static\\uploads) && del /s /q .\\public\\static\\uploads\\* && xcopy /s /e /y ..\\backend\\public\\uploads .\\public\\static\\uploads && gatsby serve",
     "clean": "gatsby clean"
   },
   "dependencies": {
