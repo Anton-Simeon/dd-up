@@ -17,7 +17,7 @@ exports.createPages = ({ graphql, actions }) => {
         result.data.allStrapiWork.edges.forEach(({ node }) => {
           createPage({
             path: `/works/${node.slug}`,
-            component: path.resolve(`./src/components/work.js`),
+            component: path.resolve(`./src/templates/work.js`),
             context: {
               slug: { id: node.id },
             },
