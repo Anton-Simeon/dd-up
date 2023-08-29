@@ -49,6 +49,12 @@ const strapiConfig = {
             url: "*"
           },
           Info: "*",
+          AboutProjectImg: "*",
+          AboutProject: "*",
+          desktopScreens: "*",
+          mobileScreens: "*",
+          MobileScreenHide: "*",
+          worknext: "*",
           TileImage: {
             url: "*",
             alternativeText: "*"

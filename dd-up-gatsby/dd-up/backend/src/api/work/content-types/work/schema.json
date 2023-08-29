@@ -66,7 +66,7 @@
     },
     "mobileScreens": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "allowedTypes": [
         "images",
@@ -140,6 +140,20 @@
         "kw": "Title"
       },
       "customField": "plugin::slug.slug"
+    },
+    "MobileScreenHide": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "integer",
+      "default": 9
+    },
+    "worknext": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work.work"
     }
   }
 }

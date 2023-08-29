@@ -1,14 +1,15 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkBreaks from 'remark-breaks';
 
 function TextWithFormatting({ text }) {
-  // Заменяем двойные переносы строки на открывающий и закрывающий теги <p>
-  const replacedText = text.replace(/\n\n/g, '</p><p>');
+  const plugins = [remarkBreaks];
 
-  // Заменяем оставшиеся одинарные переносы строки на <br>
-  const finalText = replacedText.replace(/\n/g, '<br>');
-
-  // Используем dangerouslySetInnerHTML, чтобы вставить сформированный HTML
-  return <div dangerouslySetInnerHTML={{ __html: finalText }} />;
+  return (
+    <div>
+      <ReactMarkdown remarkPlugins={plugins}>{text}</ReactMarkdown>
+    </div>
+  );
 }
 
 export default TextWithFormatting;

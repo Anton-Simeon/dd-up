@@ -26,20 +26,20 @@ const WorksPage = ({ data }) => {
 										<TextWithFormatting text={node.TileDescription.data.TileDescription} />
 									) : null}
 									<div className="more">
-									<Link to={node.slug}>Read more<i></i></Link>
+										<Link to={node.slug}>Read more<i></i></Link>
 									</div>
 								</div>
 							</div>
 							<div className="col-sm-6 col-md-7 col-lg-8">
 								<div className="projects-img">
 									{node.TileImage ? (
-											<Link to={node.slug}>
-												<img loading="lazy" src={`/static${node.TileImage.url}`} alt={node.TileImage.alternativeText || 'dd up'} />
-											</Link>
+										<Link to={node.slug}>
+											<img loading="lazy" src={`/static${node.TileImage.url}`} alt={node.TileImage.alternativeText || 'dd up'} />
+										</Link>
 									) : null}
 								</div>
 								<div className="more d-block-sm">
-								<Link to={node.slug}>Read more<i></i></Link>
+									<Link to={node.slug}>Read more<i></i></Link>
 								</div>
 							</div>
 						</div>
