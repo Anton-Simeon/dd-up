@@ -9,8 +9,6 @@ import { useIntl } from 'gatsby-plugin-intl';
 const Header = () => {
 	const intl = useIntl();
 	const currentLanguage = intl.locale;
-
-	console.log(currentLanguage);
 	return (
 		<header className="header">
 			<div className="container">

@@ -6,15 +6,7 @@ import Seo from '../components/seo'
 import TextWithFormatting from '../components/TextWithFormatting';
 
 const WorkPage = ({ pageContext, data }) => {
-	// const { localizations } = node;
-	// const languageId = pageContext.intl.language === 'en' ? node.strapi_id : node.localizations.data[0].id;
-	// const languageId = 5;
-  
 	const work = data.strapiWork;
-	// console.log(pageContext.intl.language);
-	// console.log(pageContext);
-	console.log(data.strapiWork);
-
 	return (
 	  <Layout>
 
