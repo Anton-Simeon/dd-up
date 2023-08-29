@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkBreaks from 'remark-breaks';
+import rehypeRaw from "rehype-raw";
 
 function TextWithFormatting({ text }) {
   const plugins = [remarkBreaks];
 
   return (
     <div>
-      <ReactMarkdown remarkPlugins={plugins}>{text}</ReactMarkdown>
+      <ReactMarkdown remarkPlugins={plugins} rehypePlugins={[rehypeRaw]}>{text}</ReactMarkdown>
     </div>
   );
 }

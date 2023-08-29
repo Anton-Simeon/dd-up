@@ -52,7 +52,7 @@ const WorksPage = ({ data }) => {
 
 export const query = graphql`
 	query MyQuery($language: String) {
-		allStrapiWork(filter: {locale: {eq: $language}}, sort: {createdAt: DESC}) {
+		allStrapiWork(filter: {locale: {eq: $language}}, sort: {sort: DESC}) {
 			edges {
 				node {
 					Title

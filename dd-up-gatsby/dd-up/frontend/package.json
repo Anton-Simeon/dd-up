@@ -30,6 +30,8 @@
     "react-i18next": "^13.2.0",
     "react-intl": "^6.4.4",
     "react-markdown": "^8.0.7",
+    "rehype": "^13.0.0",
+    "rehype-raw": "^7.0.0",
     "remark-breaks": "^3.0.3",
     "remark-html": "^15.0.2",
     "remark-strip-html": "^1.0.2",
