@@ -1,8 +1,9 @@
 .hero {
-	margin-top: -130px;
+	top: -130px;
 	position: relative;
 	background-size: cover;
 	background-position: 50% 50%;
+	margin-bottom: -130px;
 	h5 {
 		margin-bottom: 20px;
 		color: #4E4884;
@@ -14,6 +15,7 @@
 		min-height: 100vh;
 		padding-top: 200px;
 		display: flex;
+		width: 100%;
 		padding-bottom: 70px;
 		position: relative;
 		&:before {
@@ -52,5 +54,11 @@
 				}
 			}
 		}
+	}
+}
+@media(max-width: 767px) {
+	.hero {
+		top: -70px;
+		margin-bottom: -70px;
 	}
 }

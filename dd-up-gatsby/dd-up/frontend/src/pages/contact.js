@@ -112,5 +112,5 @@ export const query = graphql`
 `;
 
 
-export const Head = () => (<Seo title="Services" />)
+export const Head = () => (<Seo title="Contact" />)
 export default ServicesPage

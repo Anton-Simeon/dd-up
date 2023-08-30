@@ -2,11 +2,16 @@ import React from "react";
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import { useIntl } from 'gatsby-plugin-intl';
+import { useModal } from '../context/ModalContext'; // Импортируйте useModal
+
 
 const Footer = () => {
 
 	const intl = useIntl();
 	const currentLanguage = intl.locale;
+
+	const { isModalVisible, toggleModal } = useModal();
+
 
 	return (
 		<>
@@ -38,7 +43,7 @@ const Footer = () => {
 					<div className="row">
 						<div className="col-sm-4 col-lg-3">
 							<Link to='/' className="footer-logo">
-								<StaticImage src="../images/logo.svg" imgStyle={{ transition: 'none', opacity: 1 }} alt="dd up" />
+								<StaticImage src="../images/logo.svg" alt="dd up" />
 							</Link>
 						</div>
 						<div className="col-sm-8 col-lg-9 d-lg-flex justify-content-between">
@@ -66,7 +71,7 @@ const Footer = () => {
 			<div className="footer-bottom">
 				<div className="container">
 					<div className="row">
-						<div className="col-sm-3">© DDup, 2022</div>
+						<div className="col-sm-3">© DDup, 2023</div>
 						<div className="col-sm-9">
 							<ul>
 								<li><Link to={`/${currentLanguage}/impressum`}>Impressum</Link></li>
@@ -77,8 +82,29 @@ const Footer = () => {
 					</div>
 				</div>
 			</div>
+			<div className="modal-menu" style={{ display: isModalVisible ? "block" : "none" }}>
+				<div className="modal-bg"></div>
+				<div className="modal-container">
+					<div className="modal-logo">
+						<StaticImage src="../images/logo.svg" alt="DD up" />
+					</div>
+					<div className="modal-close" onClick={toggleModal}></div>
+					<div className="modal-content">
+						<nav className="mobile-nav">
+							<ul>
+								<li><Link to={`/${currentLanguage}/about`} onClick={toggleModal} activeClassName="current">{intl.formatMessage({ id: "headerAbout" })}</Link></li>
+								<li><Link to={`/${currentLanguage}/services`} onClick={toggleModal} activeClassName="current">{intl.formatMessage({ id: "headerServices" })}</Link></li>
+								<li><Link to={`/${currentLanguage}/works`} onClick={toggleModal} activeClassName="current">{intl.formatMessage({ id: "headerWorks" })}</Link></li>
+								<li><Link to={`/${currentLanguage}/contact`} onClick={toggleModal} activeClassName="current">{intl.formatMessage({ id: "headerContact" })}</Link></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
 		</>
 	)
 }
+
+
 
 export default Footer

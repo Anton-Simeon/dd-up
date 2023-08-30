@@ -1,5 +1,12 @@
-{
-  "langDropdown": "DE",
-  "chooseLanguage": "Wählen Sie eine Sprache:",
-  "hello": "Hallo, Welt!"
-}
+{   
+    "langDropdown": "DE",
+
+    
+    "headerAbout": "ABOUT",
+    "headerServices": "SERVICES",
+    "headerWorks": "WORKS",
+    "headerContact": "CONTACT",
+
+
+    "hello2": "Hello, World!"
+  }
