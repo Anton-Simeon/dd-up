@@ -48,19 +48,18 @@ function LanguageSwitcher() {
 
 	return (
 	<div className={`header-dropdown ${isOpen ? 'open' : ''}`} ref={dropdownRef}>
-		<div className="header-dropdown-title" onClick={handleTitleClick}>{intl.formatMessage({ id: "langDropdown" })}<i></i>
-		</div>
+		<button type="button" className="header-dropdown-title" onClick={handleTitleClick}>{intl.formatMessage({ id: "langDropdown" })}<i></i></button>
 		<div className="header-dropdown-container">
 		<ul>
           {intl.locale === 'en' ? (
             <>
-              <li className={'active'} onClick={() => handleItemClick('en')}>ENG</li>
-              <li onClick={() => handleItemClick('de')}>DE</li>
+              <li><button type="button" className={'active'} onClick={() => handleItemClick('en')}>ENG</button></li>
+			  <li><button type="button" onClick={() => handleItemClick('de')}>DE</button></li>
             </>
           ) : (
             <>
-				<li className={'active'} onClick={() => handleItemClick('de')}>DE</li>
-              <li onClick={() => handleItemClick('en')}>ENG</li>
+				<li><button type="button" className={'active'} onClick={() => handleItemClick('de')}>DE</button></li>
+            	<li><button type="button" onClick={() => handleItemClick('en')}>ENG</button></li>
             </>
           )}
         </ul>

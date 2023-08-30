@@ -19,20 +19,22 @@ const Header = () => {
 				<Link to={`/${currentLanguage}`} className="logo">
 					<StaticImage src="../images/logo.svg" alt="dd up" />
 				</Link>
-				<div className="header-nav-btn" onClick={toggleModal}>
-					<div></div>
-					<div></div>
-					<div></div>
+				<div className='header-right'>
+					<nav className="header-nav">
+						<ul>
+							<li><Link to={`/${currentLanguage}/about`} activeClassName="current">{intl.formatMessage({ id: "headerAbout" })}</Link></li>
+							<li><Link to={`/${currentLanguage}/services`} activeClassName="current">{intl.formatMessage({ id: "headerServices" })}</Link></li>
+							<li><Link to={`/${currentLanguage}/works`} activeClassName="current">{intl.formatMessage({ id: "headerWorks" })}</Link></li>
+							<li><Link to={`/${currentLanguage}/contact`} activeClassName="current">{intl.formatMessage({ id: "headerContact" })}</Link></li>
+						</ul>
+					</nav>
+					<LanguageSwitcher />
+					<button type='button' className="header-nav-btn" onClick={toggleModal}>
+						<div></div>
+						<div></div>
+						<div></div>
+					</button>
 				</div>
-				<LanguageSwitcher />
-				<nav className="header-nav">
-					<ul>
-						<li><Link to={`/${currentLanguage}/about`} activeClassName="current">{intl.formatMessage({ id: "headerAbout" })}</Link></li>
-						<li><Link to={`/${currentLanguage}/services`} activeClassName="current">{intl.formatMessage({ id: "headerServices" })}</Link></li>
-						<li><Link to={`/${currentLanguage}/works`} activeClassName="current">{intl.formatMessage({ id: "headerWorks" })}</Link></li>
-						<li><Link to={`/${currentLanguage}/contact`} activeClassName="current">{intl.formatMessage({ id: "headerContact" })}</Link></li>
-					</ul>
-				</nav>
 			</div>
 		</header>
 	)

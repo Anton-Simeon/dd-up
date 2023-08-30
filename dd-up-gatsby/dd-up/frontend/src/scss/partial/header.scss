@@ -39,11 +39,14 @@
 	float: left;
 	margin: 40px 0 0;
 }
+.header-right {
+	float: right;
+}
 .header-nav {
 	font-weight: 700;
 	font-size: 16px;
 	line-height: 22px;
-	float: right;
+	float: left;
 	padding: 54px 0;
 	ul {
 		list-style: none;
@@ -82,7 +85,7 @@
 }
 
 .header-dropdown {
-	float: right;
+	float: left;
 	margin-top: 49px;
 	margin-left: 95px;
 	margin-right: -9px;
@@ -97,6 +100,9 @@
 		cursor: pointer;
 		text-decoration: none;
 		display: block;
+		border: none;
+		user-select: none;
+		background-color: transparent;
 		i {
 			display: block;
 			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='8' viewBox='0 0 17 8' fill='none'%3E%3Cpath d='M12 1H2L7 7L12 1Z' stroke='%23F6F6F6'/%3E%3C/svg%3E");
@@ -131,23 +137,35 @@
 		}
 		li {
 			border-bottom: 1px solid rgba(116, 105, 234, 0.2);
-			padding: 5px 10px;
-			line-height: 22px;
-			font-size: 16px;
 			text-decoration: none;
 			display: block;
 			color: #4E4884;
 			cursor: pointer;
 			font-weight: 500;
-			&:hover {
-				background: #EB7FE7;
-				color: #f6f6f6 !important;
+			user-select: none;
+			border: none;
+			background-color: transparent;
+			> * {
+				user-select: none;
+				display: block;
+				border: none;
+				background-color: transparent;
+				padding: 5px 10px;
+				line-height: 22px;
+				font-size: 16px;
+				width: 100%;
+				text-align: left;
+				cursor: pointer;
+				&:hover {
+					background: #EB7FE7;
+					color: #f6f6f6 !important;
+				}
+				&.active {
+					color: #EB7FE7;
+				}
 			}
 			&:last-child {
 				border-bottom: none;
-			}
-			&.active {
-				color: #EB7FE7;
 			}
 		}
 		
@@ -183,6 +201,10 @@
 		padding: 20px;
 		width: 70px;
 		margin-right: -16px;
+		border: none;
+		background-color: transparent;
+		font-size: 0;
+		user-select: none;
 	}
 	.header-nav-btn > div {
 		height: 2px;
@@ -269,6 +291,12 @@
 		background-size: 20px auto;
 		background-repeat: no-repeat;
 		background-position: 50% 50%;
+		color: transparent;
+		border: none;
+		font-size: 0;
+		user-select: none;
+		overflow: hidden;
+		background-color: transparent;
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' stroke='none'%3E%3Cpath d='M20 1.75L18.25 0L10 8.25L1.75 0L0 1.75L8.25 10L0 18.25L1.75 20L10 11.75L18.25 20L20 18.25L11.75 10L20 1.75Z' fill='%23f6f6f6'/%3E%3C/svg%3E");
 	}
 	.mobile-nav {

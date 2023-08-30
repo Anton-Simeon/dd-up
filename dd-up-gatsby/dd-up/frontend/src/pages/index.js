@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { graphql } from "gatsby";
+import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import { StaticImage } from 'gatsby-plugin-image'
 import Seo from '../components/seo'
@@ -9,9 +10,8 @@ import TextWithFormatting from '../components/TextWithFormatting';
 
 const IndexPage = ({ data }) => {
     const intl = useIntl()
-
-	const dataHome = data.strapiHome;	
-	console.log(data);
+	const currentLanguage = intl.locale;
+	const dataHome = data.strapiHome;
 
 	return (
 		<Layout>
@@ -44,10 +44,10 @@ const IndexPage = ({ data }) => {
 						<div className="col-sm-6 col-md-4 order-md-last">
 							<h5 className="sub-title sub-title-margin d-block-mobile">Our Works</h5>
 							<ul className="our-works-list">
-								<li><a href="">Haut & Haar</a></li>
+								<li><Link to={`/${currentLanguage}/works/haut-and-haar`}>Haut & Haar</Link></li>
 							</ul>
 							<div className="more">
-								<a href="">All projects<i></i></a>
+								<Link to={`/${currentLanguage}/works`}>All projects<i></i></Link>
 							</div>
 						</div>
 					</div>

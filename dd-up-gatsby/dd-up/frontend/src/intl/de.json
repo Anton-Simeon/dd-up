@@ -8,5 +8,21 @@
     "headerContact": "CONTACT",
 
 
+    "WhatAboutYouTitle": "What about you?",
+    "WhatAboutYouText": "Let’s talk!<br>Only one thing left to discuss your project.<br>Tell us about your business.<br>So fill the form and see you soon!",
+    "footerText": "Easy solutions for\u00A0difficult\u00A0tasks",
+    "footer.Home": "Home",
+    "footer.Services": "Services",
+    "footer.Works": "Works",
+    "footer.About": "About",
+    "footer.Contact": "Contact",
+    "footer.Impressum": "Impressum",
+    "footer.Datenschutz": "Datenschutz",
+    "footer.Cookies": "Cookies",
+    "footer.Link": "I want a Site",
+    
+
+
+    
     "hello2": "Hello, World!"
   }

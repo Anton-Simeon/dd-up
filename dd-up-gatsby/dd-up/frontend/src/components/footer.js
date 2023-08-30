@@ -2,16 +2,14 @@ import React from "react";
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import { useIntl } from 'gatsby-plugin-intl';
-import { useModal } from '../context/ModalContext'; // Импортируйте useModal
+import { useModal } from '../context/ModalContext';
+import parse from 'html-react-parser';
 
 
 const Footer = () => {
-
 	const intl = useIntl();
 	const currentLanguage = intl.locale;
-
 	const { isModalVisible, toggleModal } = useModal();
-
 
 	return (
 		<>
@@ -27,12 +25,12 @@ const Footer = () => {
 				<div className="container">
 					<div className="row">
 						<div className="col-sm-4 col-lg-3">
-							<h5 className="sub-title">What about you?</h5>
+							<h5 className="sub-title">{intl.formatMessage({ id: "WhatAboutYouTitle" })}</h5>
 						</div>
 						<div className="col-sm-8 col-lg-9">
-							<p>Let’s talk!<br />Only one things left to discuss your project.<br />Tell us about your business.<br />So fill the form and see you soon!</p>
+							<p>{parse(intl.formatMessage({ id: "WhatAboutYouText" }))} </p>
 							<div className="wrap-btn">
-								<Link to={`/${currentLanguage}/contact`} className="btn btn-secondary">I want a Site</Link>
+								<Link to={`/${currentLanguage}/contact`} className="btn btn-secondary">{intl.formatMessage({ id: "footer.Link" })}</Link>
 							</div>
 						</div>
 					</div>
@@ -48,16 +46,16 @@ const Footer = () => {
 						</div>
 						<div className="col-sm-8 col-lg-9 d-lg-flex justify-content-between">
 							<div className="footer-text">
-								Easy solutions for&nbsp;difficult&nbsp;tasks
+								{intl.formatMessage({ id: "footerText" })}
 							</div>
 							<div>
 								<nav className="footer-nav">
 									<ul>
-										<li><Link to={`/${currentLanguage}/`}>Home</Link></li>
-										<li><Link to={`/${currentLanguage}/services`}>Services</Link></li>
-										<li><Link to={`/${currentLanguage}/works`}>Works</Link></li>
-										<li><Link to={`/${currentLanguage}/about`}>About</Link></li>
-										<li><Link to={`/${currentLanguage}/contact`}>Contact</Link></li>
+										<li><Link to={`/${currentLanguage}/`}>{intl.formatMessage({ id: "footer.Home" })}</Link></li>
+										<li><Link to={`/${currentLanguage}/services`}>{intl.formatMessage({ id: "footer.Services" })}</Link></li>
+										<li><Link to={`/${currentLanguage}/works`}>{intl.formatMessage({ id: "footer.Works" })}</Link></li>
+										<li><Link to={`/${currentLanguage}/about`}>{intl.formatMessage({ id: "footer.About" })}</Link></li>
+										<li><Link to={`/${currentLanguage}/contact`}>{intl.formatMessage({ id: "footer.Contact" })}</Link></li>
 									</ul>
 								</nav>	
 								<div className="footer-contact">
@@ -74,9 +72,9 @@ const Footer = () => {
 						<div className="col-sm-3">© DDup, 2023</div>
 						<div className="col-sm-9">
 							<ul>
-								<li><Link to={`/${currentLanguage}/impressum`}>Impressum</Link></li>
-								<li><Link to={`/${currentLanguage}/datenschutz`}>Datenschutz</Link></li>
-								<li><Link to={`/${currentLanguage}/cookies`}>Cookies</Link></li>
+								<li><Link to={`/${currentLanguage}/impressum`}>{intl.formatMessage({ id: "footer.Impressum" })}</Link></li>
+								<li><Link to={`/${currentLanguage}/datenschutz`}>{intl.formatMessage({ id: "footer.Datenschutz" })}</Link></li>
+								<li><Link to={`/${currentLanguage}/cookies`}>{intl.formatMessage({ id: "footer.Cookies" })}</Link></li>
 							</ul>
 						</div>
 					</div>
@@ -86,9 +84,9 @@ const Footer = () => {
 				<div className="modal-bg"></div>
 				<div className="modal-container">
 					<div className="modal-logo">
-						<StaticImage src="../images/logo.svg" alt="DD up" />
+						<Link to={`/${currentLanguage}/`} onClick={toggleModal}><StaticImage src="../images/logo.svg" alt="DD up" /></Link>
 					</div>
-					<div className="modal-close" onClick={toggleModal}></div>
+					<button type="button" className="modal-close" onClick={toggleModal}>close</button>
 					<div className="modal-content">
 						<nav className="mobile-nav">
 							<ul>
@@ -104,7 +102,4 @@ const Footer = () => {
 		</>
 	)
 }
-
-
-
 export default Footer
