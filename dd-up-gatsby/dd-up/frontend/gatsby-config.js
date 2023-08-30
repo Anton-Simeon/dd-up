@@ -52,6 +52,28 @@ const strapiConfig = {
       }
     },
     {
+      singularName: "service",
+      queryParams: {
+        populate: "*",
+      },
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      }
+    },
+    {
+      singularName: "contact",
+      queryParams: {
+        populate: "*",
+      },
+      pluginOptions: {
+        i18n: {
+          locale: "all", // Fetch all localizations
+        },
+      }
+    },
+    {
       singularName: "work",
       queryParams: {
         populate: {

@@ -13,7 +13,7 @@ const Header = () => {
 		<header className="header">
 			<div className="container">
 				<Link to={`/${currentLanguage}`} className="logo">
-					<StaticImage src="../images/logo.svg" imgStyle={{ transition: 'none', opacity: 1 }} alt="dd up" />
+					<StaticImage src="../images/logo.svg" alt="dd up" />
 				</Link>
 				<div className="header-nav-btn">
 					<div></div>
@@ -23,9 +23,10 @@ const Header = () => {
 				<LanguageSwitcher />
 				<nav className="header-nav">
 					<ul>
-						<li><Link to={`/${currentLanguage}`} activeClassName="current">HOME</Link></li>
 						<li><Link to={`/${currentLanguage}/about`} activeClassName="current">ABOUT</Link></li>
+						<li><Link to={`/${currentLanguage}/services`} activeClassName="current">SERVICES</Link></li>
 						<li><Link to={`/${currentLanguage}/works`} activeClassName="current">WORKS</Link></li>
+						<li><Link to={`/${currentLanguage}/contact`} activeClassName="current">CONTACT</Link></li>
 					</ul>
 				</nav>
 			</div>

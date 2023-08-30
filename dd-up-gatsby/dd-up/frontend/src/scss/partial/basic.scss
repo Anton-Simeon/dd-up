@@ -203,3 +203,12 @@ b {
 		font-size: 44px;
 	}
 }
+
+.gatsby-image-wrapper [data-main-image] {
+	opacity: 1 !important;
+	will-change: none !important;
+	transition: none !important;
+}
+.gatsby-image-wrapper [data-placeholder-image] {
+	display: none !important;
+}

@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
+import { useIntl } from 'gatsby-plugin-intl';
 
 const Footer = () => {
 
+	const intl = useIntl();
+	const currentLanguage = intl.locale;
 
 	return (
 		<>
@@ -24,7 +27,7 @@ const Footer = () => {
 						<div className="col-sm-8 col-lg-9">
 							<p>Let’s talk!<br />Only one things left to discuss your project.<br />Tell us about your business.<br />So fill the form and see you soon!</p>
 							<div className="wrap-btn">
-								<Link to='/contact' className="btn btn-secondary">I want a Site</Link>
+								<Link to={`/${currentLanguage}/contact`} className="btn btn-secondary">I want a Site</Link>
 							</div>
 						</div>
 					</div>
@@ -45,11 +48,11 @@ const Footer = () => {
 							<div>
 								<nav className="footer-nav">
 									<ul>
-										<li><Link to="/">Home</Link></li>
-										<li><Link to="/services">Services</Link></li>
-										<li><Link to="/works">Works</Link></li>
-										<li><Link to="/about">About</Link></li>
-										<li><Link to="/contact">Contact</Link></li>
+										<li><Link to={`/${currentLanguage}/`}>Home</Link></li>
+										<li><Link to={`/${currentLanguage}/services`}>Services</Link></li>
+										<li><Link to={`/${currentLanguage}/works`}>Works</Link></li>
+										<li><Link to={`/${currentLanguage}/about`}>About</Link></li>
+										<li><Link to={`/${currentLanguage}/contact`}>Contact</Link></li>
 									</ul>
 								</nav>	
 								<div className="footer-contact">
@@ -66,9 +69,9 @@ const Footer = () => {
 						<div className="col-sm-3">© DDup, 2022</div>
 						<div className="col-sm-9">
 							<ul>
-								<li><Link to="impressum">Impressum</Link></li>
-								<li><Link to="datenschutz">Datenschutz</Link></li>
-								<li><Link to="cookies">Cookies</Link></li>
+								<li><Link to={`/${currentLanguage}/impressum`}>Impressum</Link></li>
+								<li><Link to={`/${currentLanguage}/datenschutz`}>Datenschutz</Link></li>
+								<li><Link to={`/${currentLanguage}/cookies`}>Cookies</Link></li>
 							</ul>
 						</div>
 					</div>

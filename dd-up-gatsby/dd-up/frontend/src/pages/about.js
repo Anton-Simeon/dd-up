@@ -28,7 +28,6 @@ const AboutPage = ({ data }) => {
         							alt="DD up"
 									src="../images/about.jpg"
 									placeholder="none"
-									imgStyle={{ transition: 'none', opacity: 1 }}
 								/>
 							</div>
 						</div>
@@ -62,7 +61,6 @@ const AboutPage = ({ data }) => {
         							alt="DD up"
 									src="../images/about1.jpg"
 									placeholder="none"
-									imgStyle={{ transition: 'none', opacity: 1 }}
 								/>
 							</div>
 						</div>
@@ -194,7 +192,6 @@ const AboutPage = ({ data }) => {
 									alt="DD up"
 									src="../images/about2.jpg"
 									placeholder="none"
-									imgStyle={{ transition: 'none', opacity: 1 }}
 								/>
 							</div>
 						</div>

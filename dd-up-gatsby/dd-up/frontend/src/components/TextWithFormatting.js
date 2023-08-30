@@ -7,9 +7,9 @@ function TextWithFormatting({ text }) {
   const plugins = [remarkBreaks];
 
   return (
-    <div>
+    <>
       <ReactMarkdown remarkPlugins={plugins} rehypePlugins={[rehypeRaw]}>{text}</ReactMarkdown>
-    </div>
+    </>
   );
 }
 
