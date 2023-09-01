@@ -8,11 +8,12 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "(if not exist .\\public\\static\\uploads mkdir .\\public\\static\\uploads) && del /s /q .\\public\\static\\uploads\\* && xcopy /s /e /y ..\\backend\\public\\uploads .\\public\\static\\uploads && gatsby develop",
-    "start": "(if not exist .\\public\\static\\uploads mkdir .\\public\\static\\uploads) && del /s /q .\\public\\static\\uploads\\* && xcopy /s /e /y ..\\backend\\public\\uploads .\\public\\static\\uploads && gatsby develop",
-    "build": "(if not exist .\\public\\static\\uploads mkdir .\\public\\static\\uploads) && del /s /q .\\public\\static\\uploads\\* && xcopy /s /e /y ..\\backend\\public\\uploads .\\public\\static\\uploads && gatsby build",
-    "serve": "(if not exist .\\public\\static\\uploads mkdir .\\public\\static\\uploads) && del /s /q .\\public\\static\\uploads\\* && xcopy /s /e /y ..\\backend\\public\\uploads .\\public\\static\\uploads && gatsby serve",
-    "clean": "gatsby clean"
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "image": "(if not exist .\\public\\static\\uploads mkdir .\\public\\static\\uploads) && del /s /q .\\public\\static\\uploads\\* && xcopy /s /e /y ..\\backend\\public\\uploads .\\public\\static\\uploads"
   },
   "dependencies": {
     "gatsby": "^5.11.0",

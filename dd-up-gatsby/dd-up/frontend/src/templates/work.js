@@ -12,8 +12,6 @@ const WorkPage = ({ pageContext, data }) => {
 
 		<section className="section">
 			<div className="container">
-
-
 			<div className="one-work-hero" style={work.Hero ? { background: `url(/static${work.Hero.url})` } : {}}>
 				<div className="row align-items-center text-center">
 						<div className="col-md-8 offset-md-2">

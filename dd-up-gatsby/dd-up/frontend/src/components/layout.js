@@ -1,4 +1,5 @@
 import React from "react"
+import { ModalProvider } from '../context/ModalContext';
 import Header from "./header"
 import Footer from "./footer"
 import "../scss/styles.scss"
@@ -6,9 +7,11 @@ import "../scss/styles.scss"
 const Layout = ({ children }) => {
   return (
     <>
-      <Header />
-      {children}
-      <Footer />
+      <ModalProvider>
+        <Header />
+        {children}
+        <Footer />
+      </ModalProvider>
     </>
   )
 }
