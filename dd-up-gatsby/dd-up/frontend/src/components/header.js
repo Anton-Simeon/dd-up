@@ -6,14 +6,16 @@ import { useModal } from '../context/ModalContext';
 
 
 
-const Header = () => {
+const Header = ({headerClass}) => {
 	const intl = useIntl();
 	const currentLanguage = intl.locale;
 
 	const { toggleModal } = useModal();
 
+	console.log(headerClass);
+
 	return (
-		<header className="header">
+		<header className={`header${headerClass ? " " : ""}${headerClass}`}>
 			<div className="container">
 				<Link to={`/${currentLanguage}`} className="logo">
 					<img loading="lazy" src="/static/images/logo.svg" alt="dd up" />

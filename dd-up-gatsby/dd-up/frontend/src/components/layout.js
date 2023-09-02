@@ -4,11 +4,11 @@ import Header from "./header"
 import Footer from "./footer"
 import "../scss/styles.scss"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, headerClass = '' }) => {
   return (
     <>
       <ModalProvider>
-        <Header />
+        <Header headerClass={headerClass} />
         {children}
         <Footer />
       </ModalProvider>

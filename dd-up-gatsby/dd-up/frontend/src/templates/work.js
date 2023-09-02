@@ -3,16 +3,23 @@ import { Link } from 'gatsby'
 import { graphql } from "gatsby";
 import { useIntl } from "gatsby-plugin-intl"
 import Layout from '../components/layout'
-import Seo from '../components/seo'
 import TextWithFormatting from '../components/TextWithFormatting';
+import { Helmet } from "react-helmet";
 
-const WorkPage = ({ pageContext, data }) => {
+
+
+const WorkPage = ({ data }) => {
 	const intl = useIntl();
 	const work = data.strapiWork;
 	return (
-	  <Layout>
+		<>
+		<Helmet>
+		  <title>{work.Title} | DD up</title>
+		</Helmet>
+	  	<Layout>
+				
 
-		<section className="section">
+		<section className="section section-no-border">
 			<div className="container">
 				<div className="one-work-hero" style={work.Hero ? { backgroundImage: `url(/static${work.Hero.url})` } : {}}>
 					<div className="row align-items-center text-center">
@@ -142,10 +149,11 @@ const WorkPage = ({ pageContext, data }) => {
 
 
 	  </Layout>
+	  </>
 	);
   };
 
-export const Head = () => (<Seo title="Work" />);
+
 export default WorkPage;
 
 export const query = graphql`
