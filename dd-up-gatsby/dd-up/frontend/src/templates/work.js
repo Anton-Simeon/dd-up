@@ -1,19 +1,21 @@
 import React from "react";
 import { Link } from 'gatsby'
 import { graphql } from "gatsby";
+import { useIntl } from "gatsby-plugin-intl"
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import TextWithFormatting from '../components/TextWithFormatting';
 
 const WorkPage = ({ pageContext, data }) => {
+	const intl = useIntl();
 	const work = data.strapiWork;
 	return (
 	  <Layout>
 
 		<section className="section">
 			<div className="container">
-			<div className="one-work-hero" style={work.Hero ? { background: `url(/static${work.Hero.url})` } : {}}>
-				<div className="row align-items-center text-center">
+				<div className="one-work-hero" style={work.Hero ? { backgroundImage: `url(/static${work.Hero.url})` } : {}}>
+					<div className="row align-items-center text-center">
 						<div className="col-md-8 offset-md-2">
 							<h1>{work.Title}</h1>
 						</div>
@@ -38,11 +40,11 @@ const WorkPage = ({ pageContext, data }) => {
 			<div className="container">
 				<div className="row">
 					<div className="col-sm-12 col-md-3 d-none-mobile">
-						<h5 className="sub-title">About project</h5>
+						<h5 className="sub-title">{intl.formatMessage({ id: "work.about.project" })}</h5>
 					</div>
 					<div className="col-sm-6 col-md-4 order-md-last">
 						<div className="services-content-right services-content d-flex flex-column">
-							<h5 className="sub-title d-block-mobile">About project</h5>
+							<h5 className="sub-title d-block-mobile">{intl.formatMessage({ id: "work.about.project" })}</h5>
 							{work.AboutProject ? (
 								<TextWithFormatting text={work.AboutProject.data.AboutProject} />
 							) : null}
@@ -63,7 +65,7 @@ const WorkPage = ({ pageContext, data }) => {
 				<div className="container">
 					<div className="row">
 						<div className="col-md-3">
-							<h5 className="sub-title sub-title-margin">Project screens</h5>
+							<h5 className="sub-title sub-title-margin">{intl.formatMessage({ id: "work.project.screens" })}</h5>
 						</div>
 						<div className="col-md-9">
 							<div className="project-screens">
@@ -86,7 +88,7 @@ const WorkPage = ({ pageContext, data }) => {
 				<div className="container">
 					<div className="row">
 						<div className="col-md-3">
-							<h5 className="sub-title sub-title-margin">Project screens</h5>
+							<h5 className="sub-title sub-title-margin">{intl.formatMessage({ id: "work.project.screens" })}</h5>
 						</div>
 						<div className="col-md-9">
 							<div className="project-screens">
@@ -114,10 +116,10 @@ const WorkPage = ({ pageContext, data }) => {
 					<div className="row flex-row-reverse">
 						<div className="col-sm-6 col-md-4 align-items-center d-flex">
 							<div className="projects-content">
-								<h5>Next project</h5>
+								<h5>{intl.formatMessage({ id: "work.next.project" })}</h5>
 								<h2>{work.worknext.Title}</h2>
 								<div className="more">
-									<Link to={`../${work.worknext.slug}`}>View project<i></i></Link>
+									<Link to={`../${work.worknext.slug}`}>{intl.formatMessage({ id: "work.view.project" })}<i></i></Link>
 								</div>
 							</div>
 						</div>
@@ -130,7 +132,7 @@ const WorkPage = ({ pageContext, data }) => {
 								) : null}
 							</div>
 							<div className="more d-block-sm">
-								<Link to={`../${work.worknext.slug}`}>View project<i></i></Link>
+								<Link to={`../${work.worknext.slug}`}>{intl.formatMessage({ id: "work.view.project" })}<i></i></Link>
 							</div>
 						</div>
 					</div>

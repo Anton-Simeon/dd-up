@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
 import { useIntl } from 'gatsby-plugin-intl';
 import { useModal } from '../context/ModalContext';
 import parse from 'html-react-parser';
@@ -41,7 +40,7 @@ const Footer = () => {
 					<div className="row">
 						<div className="col-sm-4 col-lg-3">
 							<Link to='/' className="footer-logo">
-								<StaticImage src="../images/logo.svg" alt="dd up" />
+								<img loading="lazy" src="/static/images/logo.svg" alt="dd up" />
 							</Link>
 						</div>
 						<div className="col-sm-8 col-lg-9 d-lg-flex justify-content-between">
@@ -84,7 +83,7 @@ const Footer = () => {
 				<div className="modal-bg"></div>
 				<div className="modal-container">
 					<div className="modal-logo">
-						<Link to={`/${currentLanguage}/`} onClick={toggleModal}><StaticImage src="../images/logo.svg" alt="DD up" /></Link>
+						<Link to={`/${currentLanguage}/`} onClick={toggleModal}><img loading="lazy"  src="/static/images/logo.svg" alt="DD up" /></Link>
 					</div>
 					<button type="button" className="modal-close" onClick={toggleModal}>close</button>
 					<div className="modal-content">

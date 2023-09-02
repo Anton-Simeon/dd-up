@@ -1,14 +1,15 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { StaticImage } from 'gatsby-plugin-image'
+import { useIntl } from 'gatsby-plugin-intl';
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import TextWithFormatting from '../components/TextWithFormatting';
 
 
 const ServicesPage = ({ data }) => {
+	const intl = useIntl()
 	const dataContact = data.strapiContact;	
-	console.log(data);
+
 	return (
 		<Layout>
 			<section className="section section-about section-no-border">
@@ -23,11 +24,7 @@ const ServicesPage = ({ data }) => {
 						</div>
 						<div className="col-sm-6 col-md-7 col-lg-8">
 							<div className="about-img">								
-								<StaticImage
-											alt="DD up"
-									src="../images/about.jpg"
-									placeholder="none"
-								/>
+								<img loading="lazy" alt="DD up" src="/static/images/about.jpg"/>
 							</div>
 						</div>
 					</div>
@@ -37,12 +34,12 @@ const ServicesPage = ({ data }) => {
 				<div className="container">
 					<div className="row">
 						<div className="col-sm-12 col-md-3 d-none-mobile">
-							<h5 className="sub-title">Let’s talk!</h5>
+							<h5 className="sub-title">{intl.formatMessage({ id: "contact.lets.talk" })}</h5>
 						</div>
 						<div className="col-sm-6 col-md-5">
 							<div className="services-content d-flex flex-column">
 								<div className="mb-auto">
-									<h5 className="sub-title d-block-mobile">Let’s talk!</h5>
+									<h5 className="sub-title d-block-mobile">{intl.formatMessage({ id: "contact.lets.talk" })}</h5>
 									{dataContact.LetsTalk ? (
 										<TextWithFormatting text={dataContact.LetsTalk.data.LetsTalk} />
 									) : null}

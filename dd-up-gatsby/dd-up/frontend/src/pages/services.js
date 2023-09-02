@@ -1,14 +1,14 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { StaticImage } from 'gatsby-plugin-image'
+import { useIntl } from "gatsby-plugin-intl"
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 import TextWithFormatting from '../components/TextWithFormatting';
 
 
 const ServicesPage = ({ data }) => {
+	const intl = useIntl()
 	const dataServices = data.strapiService;	
-	console.log(data);
 	return (
 		<Layout>
 			<section className="hero" style={dataServices.Hero ? { backgroundImage: `url(/static${dataServices.Hero.url})` } : {}}>
@@ -26,12 +26,12 @@ const ServicesPage = ({ data }) => {
 				<div className="container">
 					<div className="row">
 						<div className="col-sm-12 col-md-3 d-none-mobile">
-							<h5 className="sub-title">We do Websites and apps</h5>
+							<h5 className="sub-title">{intl.formatMessage({ id: "services.we.do.websites.and.apps" })}</h5>
 						</div>
 						<div className="col-sm-6 col-md-5">
 							<div className="services-content d-flex flex-column">
 								<div className="mb-auto">
-									<h5 className="sub-title d-block-mobile">We do Websites and apps</h5>
+									<h5 className="sub-title d-block-mobile">{intl.formatMessage({ id: "services.we.do.websites.and.apps" })}</h5>
 									{dataServices.WebsitesApp ? (
 										<TextWithFormatting text={dataServices.WebsitesApp.data.WebsitesApp} />
 									) : null}
@@ -45,11 +45,7 @@ const ServicesPage = ({ data }) => {
 						</div>
 						<div className="col-sm-6 col-md-4">
 							<div className="img">
-								<StaticImage
-											alt="DD up"
-									src="../images/content-services1.jpg"
-									placeholder="none"
-								/>
+								<img loading="lazy" alt="DD up" src="/static/images/content-services1.jpg"/>
 							</div>
 						</div>
 					</div>
@@ -59,12 +55,12 @@ const ServicesPage = ({ data }) => {
 				<div className="container">
 					<div className="row">
 						<div className="col-sm-12 col-md-3 d-none-mobile">
-							<h5 className="sub-title">Design services</h5>
+							<h5 className="sub-title">{intl.formatMessage({ id: "services.design.services" })}</h5>
 						</div>
 						<div className="col-sm-6 col-md-5">
 							<div className="services-content d-flex flex-column">
 								<div className="mb-auto">
-									<h5 className="sub-title d-block-mobile">Design services</h5>
+									<h5 className="sub-title d-block-mobile">{intl.formatMessage({ id: "services.design.services" })}</h5>
 									{dataServices.DesignServices ? (
 										<TextWithFormatting text={dataServices.DesignServices.data.DesignServices} />
 									) : null}
@@ -78,11 +74,7 @@ const ServicesPage = ({ data }) => {
 						</div>
 						<div className="col-sm-6 col-md-4">
 							<div className="img">
-								<StaticImage
-											alt="DD up"
-									src="../images/content-services2.jpg"
-									placeholder="none"
-								/>
+								<img loading="lazy" alt="DD up" src="/static/images/content-services2.jpg"/>
 							</div>
 						</div>
 					</div>
@@ -92,12 +84,12 @@ const ServicesPage = ({ data }) => {
 				<div className="container">
 					<div className="row">
 						<div className="col-sm-12 col-md-3 d-none-mobile">
-							<h5 className="sub-title">Development</h5>
+							<h5 className="sub-title">{intl.formatMessage({ id: "services.development" })}</h5>
 						</div>
 						<div className="col-sm-6 col-md-5">
 							<div className="services-content d-flex flex-column">
 								<div className="mb-auto">
-									<h5 className="sub-title d-block-mobile">Development</h5>
+									<h5 className="sub-title d-block-mobile">{intl.formatMessage({ id: "services.development" })}</h5>
 									{dataServices.Development ? (
 										<TextWithFormatting text={dataServices.Development.data.Development} />
 									) : null}
@@ -111,11 +103,7 @@ const ServicesPage = ({ data }) => {
 						</div>
 						<div className="col-sm-6 col-md-4">
 							<div className="img">
-								<StaticImage
-											alt="DD up"
-									src="../images/content-services3.jpg"
-									placeholder="none"
-								/>
+								<img loading="lazy" alt="DD up" src="/static/images/content-services3.jpg"/>
 							</div>
 						</div>
 					</div>
@@ -125,12 +113,12 @@ const ServicesPage = ({ data }) => {
 				<div className="container">
 					<div className="row">
 						<div className="col-sm-12 col-md-3 d-none-mobile">
-							<h5 className="sub-title">Marketing</h5>
+							<h5 className="sub-title">{intl.formatMessage({ id: "services.marketing" })}</h5>
 						</div>
 						<div className="col-sm-6 col-md-5">
 							<div className="services-content d-flex flex-column">
 								<div className="mb-auto">
-									<h5 className="sub-title d-block-mobile">Marketing</h5>
+									<h5 className="sub-title d-block-mobile">{intl.formatMessage({ id: "services.marketing" })}</h5>
 									{dataServices.Marketing ? (
 										<TextWithFormatting text={dataServices.Marketing.data.Marketing} />
 									) : null}
@@ -144,11 +132,7 @@ const ServicesPage = ({ data }) => {
 						</div>
 						<div className="col-sm-6 col-md-4">
 							<div className="img">
-								<StaticImage
-											alt="DD up"
-									src="../images/content-services4.jpg"
-									placeholder="none"
-								/>
+								<img loading="lazy" alt="DD up" src="/static/images/content-services4.jpg"/>
 							</div>
 						</div>
 					</div>

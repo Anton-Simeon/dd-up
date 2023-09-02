@@ -9,8 +9,6 @@ import TextWithFormatting from '../components/TextWithFormatting';
 
 const WorksPage = ({ data }) => {
 	const intl = useIntl();
-	const currentLanguage = intl.locale;
-
 	const works = data.allStrapiWork.edges;
 
 	return (
@@ -26,7 +24,7 @@ const WorksPage = ({ data }) => {
 										<TextWithFormatting text={node.TileDescription.data.TileDescription} />
 									) : null}
 									<div className="more">
-										<Link to={node.slug}>Read more<i></i></Link>
+										<Link to={node.slug}>{intl.formatMessage({ id: "works.read.more" })}<i></i></Link>
 									</div>
 								</div>
 							</div>
@@ -39,7 +37,7 @@ const WorksPage = ({ data }) => {
 									) : null}
 								</div>
 								<div className="more d-block-sm">
-									<Link to={node.slug}>Read more<i></i></Link>
+									<Link to={node.slug}>{intl.formatMessage({ id: "works.read.more" })}<i></i></Link>
 								</div>
 							</div>
 						</div>

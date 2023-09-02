@@ -2,7 +2,6 @@ import * as React from 'react'
 import { graphql } from "gatsby";
 import { Link } from 'gatsby'
 import Layout from '../components/layout'
-import { StaticImage } from 'gatsby-plugin-image'
 import Seo from '../components/seo'
 import { useIntl} from "gatsby-plugin-intl"
 import TextWithFormatting from '../components/TextWithFormatting';
@@ -30,24 +29,20 @@ const IndexPage = ({ data }) => {
 				<div className="container">
 					<div className="row">
 						<div className="col-sm-12 col-md-3 d-none-mobile">
-							<h5 className="sub-title sub-title-margin">Our Works</h5>
+							<h5 className="sub-title sub-title-margin">{intl.formatMessage({ id: "index.our.works" })}</h5>
 						</div>
 						<div className="col-sm-6 col-md-5 order-sm-last">
 							<div className="img-out-works">
-								<StaticImage
-											alt="DD up"
-									src="../images/our-works.jpg"
-									placeholder="none"
-								/>
+								<img loading="lazy" alt="DD up" src="/static/images/our-works.jpg"/>
 							</div>
 						</div>
 						<div className="col-sm-6 col-md-4 order-md-last">
-							<h5 className="sub-title sub-title-margin d-block-mobile">Our Works</h5>
+							<h5 className="sub-title sub-title-margin d-block-mobile">{intl.formatMessage({ id: "index.our.works" })}</h5>
 							<ul className="our-works-list">
 								<li><Link to={`/${currentLanguage}/works/haut-and-haar`}>Haut & Haar</Link></li>
 							</ul>
 							<div className="more">
-								<Link to={`/${currentLanguage}/works`}>All projects<i></i></Link>
+								<Link to={`/${currentLanguage}/works`}>{intl.formatMessage({ id: "index.all.projects" })}<i></i></Link>
 							</div>
 						</div>
 					</div>
@@ -69,7 +64,7 @@ const IndexPage = ({ data }) => {
 				<div className="container">
 					<div className="row">
 						<div className="col-sm-12 col-md-3 d-none-mobile">
-							<h5 className="sub-title">Why we</h5>
+							<h5 className="sub-title">{intl.formatMessage({ id: "index.why.we" })}</h5>
 						</div>
 						<div className="col-sm-6 col-md-5">
 							<div className="content-why-we d-flex flex-column">
@@ -88,11 +83,7 @@ const IndexPage = ({ data }) => {
 						</div>
 						<div className="col-sm-6 col-md-4">
 							<div className="img">
-								<StaticImage
-											alt="DD up"
-									src="../images/why-we.jpg"
-									placeholder="none"
-								/>
+								<img loading="lazy" alt="DD up" src="/static/images/why-we.jpg" />
 							</div>
 						</div>
 					</div>
@@ -102,11 +93,11 @@ const IndexPage = ({ data }) => {
 				<div className="container">
 					<div className="row">
 						<div className="col-sm-12 col-md-3 d-none-mobile">
-							<h5 className="sub-title">What we do</h5>
+							<h5 className="sub-title">{intl.formatMessage({ id: "index.what.we.do" })}</h5>
 						</div>
 						<div className="col-sm-6 col-md-5 d-flex flex-column order-md-last what-we-do-content">
 							<div className="mb-auto">
-								<h5 className="sub-title d-block-mobile">What we do</h5>
+								<h5 className="sub-title d-block-mobile">{intl.formatMessage({ id: "index.what.we.do" })}</h5>
 								{dataHome.WhatWeDo ? (
 									<TextWithFormatting text={dataHome.WhatWeDo.data.WhatWeDo} />
 								) : null}
@@ -120,10 +111,7 @@ const IndexPage = ({ data }) => {
 									</div>
 									<div className="col-md-4 d-none-mobile">
 										<div className="img">
-											<StaticImage
-														alt="DD up"
-												src="../images/services-we-provide.jpg"
-												placeholder="none"
+											<img loading="lazy" alt="DD up" src="/static/images/services-we-provide.jpg"
 											/>
 										</div>
 									</div>
@@ -132,11 +120,7 @@ const IndexPage = ({ data }) => {
 						</div>
 						<div className="col-sm-6 col-md-4">
 							<div className="img">
-								<StaticImage
-											alt="DD up"
-									src="../images/what-we-do.jpg"
-									placeholder="none"
-								/>
+								<img loading="lazy" alt="DD up" src="/static/images/what-we-do.jpg"/>
 							</div>
 						</div>
 					</div>

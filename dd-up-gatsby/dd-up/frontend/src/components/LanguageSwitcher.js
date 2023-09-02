@@ -4,18 +4,13 @@ import { navigate } from 'gatsby';
 
 function LanguageSwitcher() {
 	const intl = useIntl();
-
-	
-
 	const [isOpen, setIsOpen] = useState(false);
 	const dropdownRef = useRef(null);
 
-	// Обработчик клика по заголовку
 	const handleTitleClick = () => {
 		setIsOpen(!isOpen);
 	};
 
-	// Обработчик клика по пункту списка
 	const handleItemClick = (language) => {
 		setIsOpen(false);
 		const currentPath = window.location.pathname;
@@ -28,7 +23,6 @@ function LanguageSwitcher() {
 		navigate(newPath);
 	};
 
-	// Обработчик клика вне области выпадающего меню
 	const handleOutsideClick = (e) => {
 		if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
 			setIsOpen(false);
@@ -36,15 +30,11 @@ function LanguageSwitcher() {
 	};
 
 	useEffect(() => {
-		// Добавляем обработчик клика для закрытия выпадающего меню при клике вне области
 		document.addEventListener('mousedown', handleOutsideClick);
-
 		return () => {
-			// Удаляем обработчик клика при размонтировании компонента
 			document.removeEventListener('mousedown', handleOutsideClick);
 		};
 	}, []);
-
 
 	return (
 	<div className={`header-dropdown ${isOpen ? 'open' : ''}`} ref={dropdownRef}>

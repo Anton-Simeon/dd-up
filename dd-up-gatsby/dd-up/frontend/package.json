@@ -13,7 +13,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "image": "(if not exist .\\public\\static\\uploads mkdir .\\public\\static\\uploads) && del /s /q .\\public\\static\\uploads\\* && xcopy /s /e /y ..\\backend\\public\\uploads .\\public\\static\\uploads"
+    "image": "(if not exist .\\public\\static\\images mkdir .\\public\\static\\images) && (if not exist .\\public\\static\\uploads mkdir .\\public\\static\\uploads) && del /s /q .\\public\\static\\uploads\\* && xcopy /s /e /y ..\\backend\\public\\uploads .\\public\\static\\uploads && del /s /q .\\public\\static\\images\\* && xcopy /s /e /y .\\src\\images .\\public\\static\\images"
   },
   "dependencies": {
     "gatsby": "^5.11.0",

@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
-import LanguageSwitcher from '../components/LanguageSwitcher'
 import { useIntl } from 'gatsby-plugin-intl';
+import LanguageSwitcher from '../components/LanguageSwitcher'
 import { useModal } from '../context/ModalContext';
 
 
@@ -17,7 +16,7 @@ const Header = () => {
 		<header className="header">
 			<div className="container">
 				<Link to={`/${currentLanguage}`} className="logo">
-					<StaticImage src="../images/logo.svg" alt="dd up" />
+					<img loading="lazy" src="/static/images/logo.svg" alt="dd up" />
 				</Link>
 				<div className='header-right'>
 					<nav className="header-nav">
