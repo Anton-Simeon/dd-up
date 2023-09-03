@@ -19,8 +19,15 @@
 .screen {
 	margin-bottom: 40px;
 	img {
-		width: 100%;
+		max-width: 100%;
+		height: auto;
+		width: auto;
 		display: block;
+	}
+}
+.space-none {
+	.screen {
+		margin-bottom: 0px;
 	}
 }
 .screen-mobile {

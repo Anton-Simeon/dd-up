@@ -36,11 +36,23 @@
 	}
 }
 .card-team-img {
+	background: #fee6f8;
+    background-image: linear-gradient(295deg, #7570a3, transparent);
+	overflow: hidden;
+	height: 360px;
 	margin-bottom: 26px;
 	img {
 		display: block;
 		margin: auto;
-		width: 100%;
+		width: 277px;
+		max-width: 100%;
+	}
+	video {
+		display: block;
+		margin: -76px auto 0;
+		width: 277px;
+		max-width: 100%;
+		mix-blend-mode: multiply;
 	}
 }
 .card-team {

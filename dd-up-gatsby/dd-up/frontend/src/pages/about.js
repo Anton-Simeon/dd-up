@@ -75,19 +75,19 @@ const AboutPage = ({ data }) => {
 										<div className="col-sm-4 col-6">
 											<div className="card-team">
 												<div className="card-team-img">
-													<img loading="lazy" alt="DD up" src="/static/images/volodymyr.jpg"/>
+													<video autoPlay muted loop src="/static/images/olha6.mp4"></video>
 												</div>
-												<h6>Volodymyr A.</h6>
-												<p>CEO, full-stack developer</p>
+												<h6>Olha A.</h6>
+												<p>CEO, UX/UI Design</p>
 											</div>
 										</div>
 										<div className="col-sm-4 col-6">
 											<div className="card-team">
 												<div className="card-team-img">
-													<img loading="lazy" alt="DD up" src="/static/images/olha.jpg"/>
+													<img loading="lazy" alt="DD up" src="/static/images/volodymyr.png"/>
 												</div>
-												<h6>Olha A.</h6>
-												<p>Project Manager, UX/UI Design</p>
+												<h6>Volodymyr A.</h6>
+												<p>CEO, full-stack developer</p>
 											</div>
 										</div>
 										{/* <div className="col-sm-4 col-6">

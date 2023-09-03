@@ -36,7 +36,7 @@ const WorksPage = ({ data }) => {
 									<div className="projects-img">
 										{node.TileImage ? (
 											<Link to={node.slug}>
-												<img loading="lazy" src={`/static${node.TileImage.url}`} alt={node.TileImage.alternativeText || 'dd up'} />
+												<img loading="lazy" src={`/static${node.TileImage.url}`} alt={'dd up'} />
 											</Link>
 										) : null}
 									</div>
@@ -63,7 +63,6 @@ export const query = graphql`
 					slug
 					TileImage {
 						url
-						alternativeText
 					}
 					TileDescription {
 						data {

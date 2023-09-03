@@ -16,23 +16,7 @@ const strapiConfig = {
       queryParams: {
         // Populate media and relations
         // Make sure to not specify the fields key so the api always returns the updatedAt
-        populate: {
-          image: "*",
-          images: "*",
-          author: {
-            populate: {
-              avatar: "*",
-              company: {
-                populate: {
-                  image: "*",
-                },
-              },
-            },
-          },
-        },
-      },
-      queryParams: {
-        locale: "en"
+        populate: "testDynamic.image"
       },
       pluginOptions: {
         i18n: {
@@ -87,24 +71,7 @@ const strapiConfig = {
     {
       singularName: "work",
       queryParams: {
-        populate: {
-          slug: "*",
-          Hero: {
-            url: "*"
-          },
-          Info: "*",
-          AboutProjectImg: "*",
-          AboutProject: "*",
-          desktopScreens: "*",
-          mobileScreens: "*",
-          MobileScreenHide: "*",
-          worknext: "*",
-          TileImage: {
-            url: "*",
-            alternativeText: "*"
-          },
-          localizations: "*"
-        },
+        populate: "deep"
       },
       pluginOptions: {
         i18n: {
@@ -165,3 +132,5 @@ exports.onCreatePage = ({ page, actions }) => {
     },
   })
 }
+
+

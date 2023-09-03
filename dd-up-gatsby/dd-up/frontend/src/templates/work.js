@@ -11,6 +11,9 @@ import { Helmet } from "react-helmet";
 const WorkPage = ({ data }) => {
 	const intl = useIntl();
 	const work = data.strapiWork;
+
+	console.log(data);
+
 	return (
 		<>
 		<Helmet>
@@ -67,46 +70,25 @@ const WorkPage = ({ data }) => {
 				</div>
 			</div>
 		</section>
-		{work.desktopScreens ? (
-			<section className="section">
-				<div className="container">
-					<div className="row">
-						<div className="col-md-3">
-							<h5 className="sub-title sub-title-margin">{intl.formatMessage({ id: "work.project.screens" })}</h5>
-						</div>
-						<div className="col-md-9">
-							<div className="project-screens">
-								{work.desktopScreens.map((node) => (
-									<div key={node.id} className="screen">
-										{node.url ? (
-												<img loading="lazy" src={`/static${node.url}`} alt={work.Title || 'dd up'} />
-										) : null}
-									</div>
-								))}
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-		) : null}
 
-		{work.mobileScreens ? (
-			<section className="section">
+		
+		{work.Images.map((node) => (
+			<section className="section" key={node.id} >
 				<div className="container">
 					<div className="row">
 						<div className="col-md-3">
-							<h5 className="sub-title sub-title-margin">{intl.formatMessage({ id: "work.project.screens" })}</h5>
+							<h5 className="sub-title sub-title-margin">{node.Title}</h5>
 						</div>
 						<div className="col-md-9">
 							<div className="project-screens">
-								<div className="row screen-mobile">
-									{work.mobileScreens.map((node, index) => ( 
-										<div key={node.id} className={`col-sm-4 col-6 ${(index + 1) === work.MobileScreenHide ? 'd-none-mobile' : ''}`}> 
-											{node.url ? (
-												<div className="screen">
-													<img loading="lazy" src={`/static${node.url}`} alt={work.Title || 'dd up'} />
-												</div>
-											) : null}
+								<div className={`${node.Space === false ? 'space-none ' : ''}${node.Column !== 1 ? 'screen-mobile ' : ''}row`}>
+									{node.Photo.map((nodePhoto, index) => (
+										<div key={nodePhoto.id} className={`${node.hideMobileImage === (index + 1)? "d-none-mobile ": ""}${node.Column === 2 ? 'col-6' : ''}${node.Column === 1 ? 'col-12' : ''}${node.Column === 3 ? 'col-sm-4 col-6' : ''}`}>
+											<div className={`screen`}>
+												{nodePhoto.url ? (
+													<img loading="lazy" src={`/static${nodePhoto.url}`} alt={'dd up'} />
+												) : null}
+											</div>
 										</div>
 									))}
 								</div>
@@ -115,7 +97,8 @@ const WorkPage = ({ data }) => {
 					</div>
 				</div>
 			</section>
-		) : null}
+		))}
+
 
 		{work.worknext ? (
 			<section className="section section-project">
@@ -134,7 +117,7 @@ const WorkPage = ({ data }) => {
 							<div className="projects-img">
 								{work.worknext.TileImage ? (
 									<Link to={`../${work.worknext.slug}`}>
-										<img loading="lazy" src={`/static${work.worknext.TileImage.url}`} alt={work.worknext.TileImage.alternativeText || 'dd up'} />
+										<img loading="lazy" src={`/static${work.worknext.TileImage.url}`} alt={'dd up'} />
 									</Link>
 								) : null}
 							</div>
@@ -188,22 +171,23 @@ export const query = graphql`
 		  AboutProject
 		}
 	  }
-	  desktopScreens {
-		id
-		url
-	  }
-	  mobileScreens {
-		id
-		url
-	  }
-	  MobileScreenHide
 	  worknext {
 		Title
 		slug
 		TileImage {
 			url
-			alternativeText
 		}
+	  }
+	  Images {
+		id
+		Photo {
+			url
+			id
+		}
+        Title
+        hideMobileImage
+        Space
+        Column
 	  }
     }
   }

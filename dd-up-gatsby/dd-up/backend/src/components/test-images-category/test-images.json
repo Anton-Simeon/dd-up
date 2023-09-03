@@ -1,0 +1,67 @@
+{
+  "collectionName": "components_test_images_category_test_images",
+  "info": {
+    "displayName": "TestImages",
+    "icon": "crown",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "sdffsdfsdf": {
+      "type": "string"
+    },
+    "s2": {
+      "type": "richtext"
+    },
+    "d3": {
+      "type": "integer"
+    },
+    "d4": {
+      "type": "date"
+    },
+    "d5": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "d6": {
+      "type": "text"
+    },
+    "Img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
