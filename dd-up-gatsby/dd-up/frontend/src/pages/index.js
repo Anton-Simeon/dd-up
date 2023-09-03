@@ -44,6 +44,7 @@ const IndexPage = ({ data }) => {
 								<h5 className="sub-title sub-title-margin d-block-mobile">{intl.formatMessage({ id: "index.our.works" })}</h5>
 								<ul className="our-works-list">
 									<li><Link to={`/${currentLanguage}/works/haut-and-haar`}>Haut & Haar</Link></li>
+									<li><Link to={`/${currentLanguage}/works/dota-2`}>Dota 2</Link></li>
 								</ul>
 								<div className="more">
 									<Link to={`/${currentLanguage}/works`}>{intl.formatMessage({ id: "index.all.projects" })}<i></i></Link>

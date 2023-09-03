@@ -12,19 +12,6 @@ const strapiConfig = {
   accessToken: process.env.STRAPI_TOKEN,
   collectionTypes: [
     {
-      singularName: "article",
-      queryParams: {
-        // Populate media and relations
-        // Make sure to not specify the fields key so the api always returns the updatedAt
-        populate: "testDynamic.image"
-      },
-      pluginOptions: {
-        i18n: {
-          locale: "en", // Fetch all localizations
-        },
-      },
-    },
-    {
       singularName: "about",
       queryParams: {
         populate: "*",
