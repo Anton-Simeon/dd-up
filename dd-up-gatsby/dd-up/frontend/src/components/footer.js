@@ -58,7 +58,7 @@ const Footer = () => {
 									</ul>
 								</nav>	
 								<div className="footer-contact">
-									<a href="mailto:contact@dd-up.at">contact@dd-up.at</a>
+									<a href="mailto:contact@ddup.at">contact@ddup.at</a>
 								</div>
 							</div>
 						</div>

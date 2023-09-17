@@ -12,8 +12,6 @@ const Header = ({headerClass}) => {
 
 	const { toggleModal } = useModal();
 
-	console.log(headerClass);
-
 	return (
 		<header className={`header${headerClass ? " " : ""}${headerClass}`}>
 			<div className="container">

@@ -28,7 +28,7 @@ const AboutPage = ({ data }) => {
 							</div>
 							<div className="col-sm-6 col-md-7 col-lg-8">
 								<div className="about-img">
-									<img loading="lazy" alt="DD up" src="/static/images/about.jpg"/>
+									<img loading="lazy" alt="DD up" height="460" width="759" src="/static/images/about.jpg"/>
 								</div>
 							</div>
 						</div>
@@ -57,7 +57,7 @@ const AboutPage = ({ data }) => {
 							</div>
 							<div className="col-md-4 col-sm-6">
 								<div className="img">
-									<img loading="lazy" alt="DD up" src="/static/images/about1.jpg"/>
+									<img loading="lazy" alt="DD up" height="744" width="380" src="/static/images/about1.jpg"/>
 								</div>
 							</div>
 						</div>

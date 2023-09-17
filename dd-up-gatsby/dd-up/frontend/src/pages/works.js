@@ -36,7 +36,7 @@ const WorksPage = ({ data }) => {
 									<div className="projects-img">
 										{node.TileImage ? (
 											<Link to={node.slug}>
-												<img loading="lazy" src={`/static${node.TileImage.url}`} alt={'dd up'} />
+												<img loading="lazy" width='759' height='460' src={`/static${node.TileImage.url}`} alt={'dd up'} />
 											</Link>
 										) : null}
 									</div>

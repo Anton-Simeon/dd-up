@@ -19,6 +19,9 @@ input:-webkit-autofill:focus {
 .form-btn {
 	margin-top: 40px;
 }
+.form-floating > textarea.form-control {
+	height: 124px;
+}
 
 @media(max-width: 1080px) {
 	.email {

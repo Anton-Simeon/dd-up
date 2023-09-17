@@ -1,7 +1,8 @@
 .about-img {
 	padding-right: 30px;
 	img {
-		width: 100%;
+		max-width: 100%;
+		height: auto;
 		display: block;
 	}
 }

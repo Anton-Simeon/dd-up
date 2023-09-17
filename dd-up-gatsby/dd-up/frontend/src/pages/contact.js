@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from 'react';
+import axios from 'axios';
 import { graphql } from "gatsby";
 import { useIntl } from 'gatsby-plugin-intl';
 import { Helmet } from "react-helmet";
@@ -6,9 +7,44 @@ import Layout from '../components/layout'
 import TextWithFormatting from '../components/TextWithFormatting';
 
 
-const ServicesPage = ({ data }) => {
+const ContactPage = ({ data }) => {
 	const intl = useIntl()
 	const dataContact = data.strapiContact;	
+
+
+  const [formData, setFormData] = useState({
+    name: '',
+    compamy: '',
+    email: '',
+    project_name: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+
+
+
+	
+	console.log(formData);
+    e.preventDefault();
+
+
+
+    axios.post('/api/contact', formData) // Замените '/api/contact' на URL вашего сервера для обработки формы
+      .then((response) => {
+        console.log('Form data sent successfully:', response.data);
+        // Дополнительная обработка успешной отправки
+      })
+      .catch((error) => {
+        console.error('Error sending form data:', error);
+        // Обработка ошибки отправки
+      });
+  };
 
 	return (
 		<>
@@ -28,7 +64,7 @@ const ServicesPage = ({ data }) => {
 							</div>
 							<div className="col-sm-6 col-md-7 col-lg-8">
 								<div className="about-img">								
-									<img loading="lazy" alt="DD up" src="/static/images/about.jpg"/>
+									<img loading="lazy" alt="DD up" height="460" width="759" src="/static/images/about.jpg"/>
 								</div>
 							</div>
 						</div>
@@ -56,31 +92,31 @@ const ServicesPage = ({ data }) => {
 								</div>
 							</div>
 							<div className="col-sm-6 col-md-4">
-								{/* <form className="contact-form">
+								<form className="contact-form" onSubmit={handleSubmit}>
 									<div className="form-floating">
-										<input type="text" className="form-control" id="name" placeholder="Name" />
-										<label for="name">Name</label>
+										<input type="text" className="form-control" id="name" name="name" placeholder="Name" onChange={handleChange} />
+										<label htmlFor="name">Name</label>
 									</div>
 									<div className="form-floating">
-										<input type="text" className="form-control" id="compamy" placeholder="Company" />
-										<label for="compamy">Company</label>
+										<input type="text" className="form-control" id="compamy" name="compamy" placeholder="Company" onChange={handleChange} />
+										<label htmlFor="compamy">Company</label>
 									</div>
 									<div className="form-floating">
-										<input type="text" className="form-control" id="email" placeholder="Email" />
-										<label for="email">Email</label>
+										<input type="text" className="form-control" id="email" name="email" placeholder="Email" onChange={handleChange} />
+										<label htmlFor="email">Email</label>
 									</div>
 									<div className="form-floating">
-										<input type="text" className="form-control" id="project-name" placeholder="Project Name" />
-										<label for="project-name">Project Name</label>
+										<input type="text" className="form-control" id="project_name" name="project_name" placeholder="Project Name" onChange={handleChange} />
+										<label htmlFor="project-name">Project Name</label>
 									</div>
 									<div className="form-floating">
-										<textarea className="form-control" placeholder="Description" id="description" style="height: 124px"></textarea>
-										<label for="description">Description</label>
+										<textarea className="form-control" placeholder="Description" id="description" name="description" onChange={handleChange}></textarea>
+										<label htmlFor="description">Description</label>
 									</div>
 									<div className="form-btn d-grid">
 										<button type="submit" className="btn btn-primary btn-sm">SEND</button>
 									</div>
-								</form> */}
+								</form>
 							</div>
 						</div>
 					</div>
@@ -114,4 +150,4 @@ export const query = graphql`
 `;
 
 
-export default ServicesPage
+export default ContactPage
