@@ -12,8 +12,6 @@ const WorkPage = ({ data }) => {
 	const intl = useIntl();
 	const work = data.strapiWork;
 
-	console.log(data);
-
 	return (
 		<>
 		<Helmet>
