@@ -14,11 +14,14 @@ const ContactPage = ({ data }) => {
 
   const [formData, setFormData] = useState({
     name: '',
-    compamy: '',
+    company: '',
     email: '',
     project_name: '',
-    message: '',
+    description: '',
   });
+
+
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,18 +29,25 @@ const ContactPage = ({ data }) => {
   };
 
   const handleSubmit = (e) => {
-
-
-
-	
-	console.log(formData);
     e.preventDefault();
 
-
-
-    axios.post('/api/contact', formData) // Замените '/api/contact' на URL вашего сервера для обработки формы
+    axios.post('/form.php', formData) // Замените '/api/contact' на URL вашего сервера для обработки формы
       .then((response) => {
         console.log('Form data sent successfully:', response.data);
+		
+		// Функция для отображения блока и его автоматического скрытия через 5 секунд
+		function showSentEmail() {
+			const sentEmail = document.getElementById('sent-email');
+			sentEmail.style.display = 'block'; // Показать блок
+	
+			// Запустить таймер для скрытия блока через 5 секунд
+			setTimeout(function () {
+			sentEmail.style.display = 'none'; // Скрыть блок
+			}, 5000); // 5000 миллисекунд (5 секунд)
+		}
+		// Вызвать функцию, чтобы показать блок
+		showSentEmail();
+
         // Дополнительная обработка успешной отправки
       })
       .catch((error) => {
@@ -94,27 +104,33 @@ const ContactPage = ({ data }) => {
 							<div className="col-sm-6 col-md-4">
 								<form className="contact-form" onSubmit={handleSubmit}>
 									<div className="form-floating">
-										<input type="text" className="form-control" id="name" name="name" placeholder="Name" onChange={handleChange} />
-										<label htmlFor="name">Name</label>
+										<input type="text" required className="form-control" id="name" name="name" placeholder="Name" onChange={handleChange} />
+										<label htmlFor="name">Имя</label>
 									</div>
 									<div className="form-floating">
 										<input type="text" className="form-control" id="compamy" name="compamy" placeholder="Company" onChange={handleChange} />
 										<label htmlFor="compamy">Company</label>
 									</div>
 									<div className="form-floating">
-										<input type="text" className="form-control" id="email" name="email" placeholder="Email" onChange={handleChange} />
+										<input type="email" required className="form-control" id="email" name="email" placeholder="Email" onChange={handleChange} />
 										<label htmlFor="email">Email</label>
 									</div>
 									<div className="form-floating">
-										<input type="text" className="form-control" id="project_name" name="project_name" placeholder="Project Name" onChange={handleChange} />
+										<input type="text" required className="form-control" id="project_name" name="project_name" placeholder="Project Name" onChange={handleChange} />
 										<label htmlFor="project-name">Project Name</label>
 									</div>
 									<div className="form-floating">
-										<textarea className="form-control" placeholder="Description" id="description" name="description" onChange={handleChange}></textarea>
+										<textarea required className="form-control" placeholder="Description" id="description" name="description" onChange={handleChange}></textarea>
 										<label htmlFor="description">Description</label>
 									</div>
 									<div className="form-btn d-grid">
 										<button type="submit" className="btn btn-primary btn-sm">SEND</button>
+									</div>
+									<div className='sent-email' id="sent-email">
+										<div>
+											<p>{intl.formatMessage({ id: "contact.thankyouser" })} {formData.name},</p>
+											<p>{intl.formatMessage({ id: "contact.thankyou" })}</p>
+										</div>
 									</div>
 								</form>
 							</div>
