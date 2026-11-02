@@ -89,3 +89,9 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# Local secrets and database dumps
+.env
+.env.*
+!.env.example
+*.sql
